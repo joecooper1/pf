@@ -12,3 +12,8 @@ export const Text = styled.p`
   text-align: center;
   color: palevioletred;
 `;
+
+export const View = styled.header`
+  display: flex;
+  flex-direction: column;
+`;
