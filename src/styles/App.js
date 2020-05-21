@@ -8,4 +8,5 @@ export const Window = styled.h1`
   justify-content: center;
   background-color: blue;
   margin: 0;
+  flex-direction: ${props => {return props.width > 1024 ? 'row' : 'column'}}
 `;
