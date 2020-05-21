@@ -23,16 +23,12 @@ export const View = styled.header`
 `;
 
 //Contacts bar. Dimensions is passed through. Variables depend on dimensions width.
-export const Contacts = styled.nav`
+export const BigContacts = styled.nav`
   display: flex;
-  flex-direction: ${(props) => {
-    return props.dimensions.width > 1024 ? "row" : "column";
-  }};
+  flex-direction: 'row';
   background-color: white;
   width: ${(props) => {
-    return props.dimensions.width > 1024
-      ? `${props.dimensions.width * 0.6}px`
-      : `${props.dimensions.width}px`;
+    return `${props.dimensions.width * 0.6}px`
   }};
   height: 100px;
 `;
