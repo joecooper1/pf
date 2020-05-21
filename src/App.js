@@ -1,13 +1,14 @@
-import React from 'react';
-import './App.css';
+import React from "react";
 
-import Header from './components/Header'
+import { Window } from "./styles/App";
+
+import Header from "./components/Header";
 
 function App() {
   return (
-    <div className="App">
+    <Window>
       <Header />
-    </div>
+    </Window>
   );
 }
 
