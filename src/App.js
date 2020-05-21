@@ -11,7 +11,7 @@ function App() {
 
   return (
     <Window height={height} width={width}>
-      <Bio />
+      <Bio height={height} width={width} />
     </Window>
   );
 }
