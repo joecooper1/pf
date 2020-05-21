@@ -16,3 +16,9 @@ export const View = styled.header`
   display: flex;
   flex-direction: column;
 `;
+
+export const Contacts = styled.nav`
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+`;

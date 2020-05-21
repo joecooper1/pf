@@ -1,12 +1,13 @@
 import React from "react";
 
-import { Title, Text, View } from "../styles/Bio";
+import { Title, Text, View, Contacts } from "../styles/Bio";
 
 export default function Bio() {
   return (
     <View>
       <Title>Joe Cooper</Title>
-      <Text>Full-stack software developer</Text>
+      <Text>Hi. I'm Joe. I'm a full-stack software developer.</Text>
+      <Contacts></Contacts>
     </View>
   );
 }
