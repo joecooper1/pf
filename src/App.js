@@ -2,7 +2,7 @@ import React from "react";
 
 import { Window } from "./styles/App";
 
-import Header from "./components/Header";
+import Bio from "./components/Bio";
 
 import useWindowDimensions from './utils/useWindowDimensions';
 
@@ -11,7 +11,7 @@ function App() {
 
   return (
     <Window height={height} width={width}>
-      <Header />
+      <Bio />
     </Window>
   );
 }

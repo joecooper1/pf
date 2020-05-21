@@ -1,8 +1,8 @@
 import React from "react";
 
-import { Title, Text, View } from "../styles/Header";
+import { Title, Text, View } from "../styles/Bio";
 
-export default function Header() {
+export default function Bio() {
   return (
     <View>
       <Title>Joe Cooper</Title>
