@@ -1,7 +1,12 @@
 import React from "react";
 
-import {Title} from "../styles/Header";
+import { Title, Text } from "../styles/Header";
 
 export default function Header() {
-  return <Title>Joe Cooper</Title>;
+  return (
+    <>
+      <Title>Joe Cooper</Title>
+      <Text>Full-stack software developer</Text>
+    </>
+  );
 }
