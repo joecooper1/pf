@@ -10,7 +10,7 @@ function App() {
   const { height, width } = useWindowDimensions();
 
   return (
-    <Window height={height}>
+    <Window height={height} width={width}>
       <Header />
     </Window>
   );
