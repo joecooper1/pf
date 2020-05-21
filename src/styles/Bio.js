@@ -21,14 +21,3 @@ export const View = styled.header`
   display: flex;
   flex-direction: column;
 `;
-
-//Contacts bar. Dimensions is passed through. Variables depend on dimensions width.
-export const BigContacts = styled.nav`
-  display: flex;
-  flex-direction: 'row';
-  background-color: white;
-  width: ${(props) => {
-    return `${props.dimensions.width * 0.6}px`
-  }};
-  height: 100px;
-`;
