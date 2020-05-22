@@ -11,7 +11,7 @@ export const Title = styled.h1`
 
 export const Text = styled.p`
   font-size: ${props=> {
-    return props.dimensions.width > 1024 ? '1em' : '0.5em'
+    return props.dimensions.width > 1024 ? '1em' : '0.7em'
   }};
   text-align: center;
   color: palevioletred;
@@ -19,7 +19,7 @@ export const Text = styled.p`
 
 export const SmallText = styled.p`
   font-size: ${props=> {
-    return props.dimensions.width > 1024 ? '0.7em' : '0.3em'
+    return props.dimensions.width > 1024 ? '0.7em' : '0.5em'
   }};
   text-align: center;
   color: palevioletred;
