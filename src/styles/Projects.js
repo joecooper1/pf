@@ -36,5 +36,22 @@ export const ProjectStyle = styled.div`
       : `yellow`;
   }};
   margin-top: 10px;
-  
+`;
+
+export const Title = styled.h2`
+  font-size: 1em;
+  color: black;  
+`;
+
+export const Link = styled.a`
+  font-size: 0.7em;
+  color: black;
+  text-decoration: none;
+`;
+
+export const Image = styled.img`
+  width: 100%;
+  height: 80%;
+  object-fit: cover;
+  z-index: -2;
 `;
