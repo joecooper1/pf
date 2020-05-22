@@ -30,3 +30,8 @@ export const View = styled.header`
   display: flex;
   flex-direction: column;
 `;
+
+export const Link = styled.a`
+  color: black;
+  text-decoration: none;
+`;
