@@ -32,6 +32,8 @@ export const View = styled.header`
   margin-top: ${props=> {
     return props.dimensions.width > 1024 ? '0' : '-100px'
   }};
+  height: ${props => `${props.dimensions.height}px`};
+  justify-content: center;
 `;
 
 export const Link = styled.a`
