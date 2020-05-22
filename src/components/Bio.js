@@ -13,7 +13,7 @@ export default function Bio(props) {
       </Text>
       <SmallText dimensions={props}>Email me at joecooper2991@gmail.com</SmallText>
       <SmallText dimensions={props}>
-        or here I am at <Link href="https://www.github.com/joecooper1">github</Link> and{" "}
+        or here I am on <Link href="https://www.github.com/joecooper1">github</Link> and{" "}
         <Link href="https://www.linkedin.com/in/joe-cooper-202b2689/">linkedin</Link>
       </SmallText>
       {/* <BigContacts dimensions={props} /> */}
