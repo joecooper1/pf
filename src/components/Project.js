@@ -8,10 +8,10 @@ export default function Project(props) {
   return (
     <ProjectStyle width={dimensions.width}>
       <Image src={data.url} alt={`Screenshot of ${data.name}`} />
-      <Info>
-        <Title>{data.name}</Title>
-        <Link href={data.github}>{githubLink}</Link>
-        <Text>{data.description}</Text>
+      <Info width={dimensions.width}>
+        <Title width={dimensions.width}>{data.name}</Title>
+        <Link href={data.github} width={dimensions.width}>{githubLink}</Link>
+        <Text width={dimensions.width}>{data.description}</Text>
       </Info>
     </ProjectStyle>
   );
