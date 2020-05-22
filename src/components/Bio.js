@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Title, Text, View, SmallText } from "../styles/Bio";
+import { Title, Text, View, SmallText, Link } from "../styles/Bio";
 
 import BigContacts from "./BigContacts";
 
@@ -13,8 +13,8 @@ export default function Bio(props) {
       </Text>
       <SmallText dimensions={props}>Email me at joecooper2991@gmail.com</SmallText>
       <SmallText dimensions={props}>
-        or here I am at <a href="https://www.github.com/joecooper1">github</a> and{" "}
-        <a href="https://www.linkedin.com/in/joe-cooper-202b2689/">linkedin</a>
+        or here I am at <Link href="https://www.github.com/joecooper1">github</Link> and{" "}
+        <Link href="https://www.linkedin.com/in/joe-cooper-202b2689/">linkedin</Link>
       </SmallText>
       {/* <BigContacts dimensions={props} /> */}
     </View>
