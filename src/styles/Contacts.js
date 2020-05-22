@@ -10,9 +10,11 @@ export const BigContactStyle = styled.nav`
   height: 100px;
   justify-content: flex-end;
   align-items: flex-end;
+  background-color: white;
 `;
 
 export const Text = styled.p`
   color: black;
   font-size: 0.5em;
+  margin: 0;
 `;
