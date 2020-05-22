@@ -17,7 +17,7 @@ export const Box = styled.ul`
   align-content: space-around;
 `;
 
-export const Project = styled.li`
+export const ProjectStyle = styled.li`
   width: ${(props) => {
     return props.dimensions.width > 1024
       ? `${props.dimensions.width * 0.2}px`
