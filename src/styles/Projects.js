@@ -22,7 +22,7 @@ export const Box = styled.ul`
 export const ProjectStyle = styled.div`
   width: ${(props) => {
     return props.width > 1024
-      ? `${props.width * 0.3}px`
+      ? `${props.width * 0.45}px`
       : `${props.width * 0.85}px`;
   }};
   height: ${(props) => {
@@ -36,22 +36,38 @@ export const ProjectStyle = styled.div`
       : `yellow`;
   }};
   margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 `;
 
 export const Title = styled.h2`
   font-size: 1em;
   color: black;  
+  margin: 0;
 `;
 
 export const Link = styled.a`
-  font-size: 0.7em;
+  font-size: 0.4em;
   color: black;
   text-decoration: none;
+  margin-top: 20;
 `;
 
 export const Image = styled.img`
-  width: 100%;
-  height: 80%;
+  height: 90%;
   object-fit: cover;
-  z-index: -2;
+`;
+
+export const Info = styled.div`
+  width: 60%; 
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const Text = styled.p`
+  font-size: 0.5em;
+  width: 90%;
 `;
