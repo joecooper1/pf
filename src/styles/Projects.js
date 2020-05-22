@@ -18,4 +18,15 @@ export const Box = styled.ul`
 `;
 
 export const Project = styled.li`
+  width: ${(props) => {
+    return props.dimensions.width > 1024
+      ? `${props.dimensions.width * 0.2}px`
+      : `${props.dimensions.width * 0.85}px`;
+  }};
+  height: ${(props) => {
+    return props.dimensions.width > 1024
+      ? `${props.dimensions.width * 0.3}px`
+      : `200px`;
+  }};
+  background-color: green;
 `;
