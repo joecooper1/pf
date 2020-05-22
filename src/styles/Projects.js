@@ -22,7 +22,7 @@ export const Box = styled.ul`
 export const ProjectStyle = styled.div`
   width: ${(props) => {
     return props.width > 1024
-      ? `${props.width * 0.2}px`
+      ? `${props.width * 0.3}px`
       : `${props.width * 0.85}px`;
   }};
   height: ${(props) => {
