@@ -23,12 +23,12 @@ export const ProjectStyle = styled.div`
   width: ${(props) => {
     return props.width > 1024
       ? `${props.width * 0.45}px`
-      : `${props.width * 0.85}px`;
+      : `${props.width * 0.95}px`;
   }};
   height: ${(props) => {
     return props.width > 1024
       ? `${props.width * 0.3}px`
-      : `200px`;
+      : `220px`;
   }};
   background-color: ${(props) => {
     return props.width > 1024
@@ -61,13 +61,20 @@ export const Image = styled.img`
 `;
 
 export const Info = styled.div`
-  width: 60%; 
+  width: ${props => {
+      return props.width > 1024 ? '60%' : '70%'
+  }}; 
   height: 95%;
   display: flex;
   flex-direction: column;
 `;
 
 export const Text = styled.p`
-  font-size: 0.5em;
-  width: 90%;
+  font-size: ${props => {
+    return props.width > 660 ? '0.5em' : '0.4em'
+  }};;
+  width: ${props => {
+    return props.width > 1024 ? '90%' : '100%'
+  }};
+  background-color: white;
 `;
