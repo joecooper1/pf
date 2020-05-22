@@ -12,7 +12,7 @@ export const Box = styled.ul`
     return props.dimensions.width > 1024 ? "row" : "column";
   }};
   justify-content: ${(props) => {
-    return props.dimensions.width > 1024 ? "space-around" : "flex-start";
+    return props.dimensions.width > 1024 ? "space-evenly" : "flex-start";
   }};
   flex-wrap: wrap;
   align-items: stretch;
@@ -35,6 +35,6 @@ export const ProjectStyle = styled.div`
       ? 'green'
       : `yellow`;
   }};
-  margin: 10px;
+  margin-top: 10px;
   
 `;
