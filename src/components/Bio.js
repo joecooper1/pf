@@ -2,9 +2,6 @@ import React from "react";
 
 import { Title, Text, View, SmallText, Link } from "../styles/Bio";
 
-import BigContacts from "./BigContacts";
-import ProjectBox from "./ProjectBox";
-
 export default function Bio(props) {
   return (
     <View dimensions={props}>
@@ -22,7 +19,6 @@ export default function Bio(props) {
           linkedin
         </Link>
       </SmallText>
-      <ProjectBox dimensions={props} />
     </View>
   );
 }
