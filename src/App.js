@@ -13,7 +13,7 @@ function App() {
   return (
     <Window height={height} width={width}>
       <Bio height={height} width={width} />
-      <ProjectBox dimensions={height, width} />
+      <ProjectBox height={height} width={width} />
     </Window>
   );
 }
