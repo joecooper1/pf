@@ -19,10 +19,11 @@ export const Text = styled.p`
 
 export const SmallText = styled.p`
   font-size: ${props=> {
-    return props.dimensions.width > 1024 ? '0.5em' : '0.3em'
+    return props.dimensions.width > 1024 ? '0.7em' : '0.3em'
   }};
   text-align: center;
   color: palevioletred;
+  margin: 0;
 `;
 
 export const View = styled.header`
