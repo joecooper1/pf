@@ -9,7 +9,7 @@ export default function ProjectBox(props) {
   return (
     <Box dimensions={props}>
       {projectData.map(data => {
-          return <Project dimensions={props} data={data} />
+          return <Project dimensions={props} data={data} key={data.name} />
       })}
     </Box>
   );
