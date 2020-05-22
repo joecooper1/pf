@@ -17,6 +17,14 @@ export const Text = styled.p`
   color: palevioletred;
 `;
 
+export const SmallText = styled.p`
+  font-size: ${props=> {
+    return props.dimensions.width > 1024 ? '0.5em' : '0.3em'
+  }};
+  text-align: center;
+  color: palevioletred;
+`;
+
 export const View = styled.header`
   display: flex;
   flex-direction: column;
