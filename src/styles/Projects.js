@@ -5,6 +5,8 @@ export const Box = styled.ul`
   background-color: red;
   min-height: 150px;
   margin-bottom: 100px;
+  margin-left: 0px;
+  padding-left: 0px;
   display: flex;
   flex-direction: ${(props) => {
     return props.dimensions.width > 1024 ? "row" : "column";
@@ -17,16 +19,22 @@ export const Box = styled.ul`
   align-content: space-around;
 `;
 
-export const ProjectStyle = styled.li`
+export const ProjectStyle = styled.div`
   width: ${(props) => {
-    return props.dimensions.width > 1024
-      ? `${props.dimensions.width * 0.2}px`
-      : `${props.dimensions.width * 0.85}px`;
+    return props.width > 1024
+      ? `${props.width * 0.2}px`
+      : `${props.width * 0.85}px`;
   }};
   height: ${(props) => {
-    return props.dimensions.width > 1024
-      ? `${props.dimensions.width * 0.3}px`
+    return props.width > 1024
+      ? `${props.width * 0.3}px`
       : `200px`;
   }};
-  background-color: green;
+  background-color: ${(props) => {
+    return props.width > 1024
+      ? 'green'
+      : `yellow`;
+  }};
+  margin: 10px;
+  
 `;
