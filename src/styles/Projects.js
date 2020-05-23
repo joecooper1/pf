@@ -61,12 +61,17 @@ export const Links = styled.nav`
   flex-direction: row;
   align-self: flex-end;
   background-color: pink;
+  ${props => {
+    return props.width > 1024 ? "" : "width: 100%; justify-content: space-between";
+  }}
 `;
 
 export const Link = styled.a`
   font-size: 0.4em;
   color: black;
-  text-decoration: none;
+  text-decoration: ${props => {
+    return props.width > 1024 ? "none" : "underline";
+  }};
   margin-top: 20;
 `;
 

@@ -17,7 +17,7 @@ export default function Project(props) {
   //Set what the github link should say based on screen size
   const githubLink = dimensions.width > 1024 ? <GithubLink /> : "View code";
   //Set what the live site link should look like based on whether there is one
-  const liveLink = data.link ? <LiveLink /> : "";
+  const liveLink = data.link ? dimensions.width > 1024 ? <LiveLink /> : "Live site" : "";
   //If picture is vertical, set type to vertical, else horizontal
   const type =
     data.name === "uFluent" || data.name === "Only Reggae"
@@ -30,8 +30,8 @@ export default function Project(props) {
       <Info width={dimensions.width} type={type}>
         <Title width={dimensions.width}>{data.name}</Title>
         <Text width={dimensions.width}>{data.description}</Text>
-        <Links>
-          <Link href={data.link}>{liveLink}</Link>
+        <Links width={dimensions.width}>
+          <Link href={data.link} width={dimensions.width}>{liveLink}</Link>
           <Link href={data.github} width={dimensions.width}>
             {githubLink}
           </Link>
