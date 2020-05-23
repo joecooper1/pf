@@ -56,6 +56,13 @@ export const Title = styled.h2`
   margin: 0;
 `;
 
+export const Links = styled.nav`
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+  background-color: pink;
+`;
+
 export const Link = styled.a`
   font-size: 0.4em;
   color: black;
@@ -96,7 +103,7 @@ export const Text = styled.p`
     return props.width > 660 ? "0.5em" : "0.4em";
   }};
   width: ${(props) => {
-    return props.width > 1024 ? "90%" : "100%";
+    return props.width > 1024 ? "100%" : "100%";
   }};
   background-color: white;
 `;
@@ -117,5 +124,27 @@ export function GithubLink() {
         borderRadius: "10px",
       }}
     />
+  );
+}
+
+export function LiveLink() {
+  return (
+    <p
+      style={{
+        backgroundColor: "rgba(0, 0, 0, 0.3)",
+        width: 70,
+        height: 30,
+        paddingLeft: 10,
+        paddingRight: 0,
+        paddingTop: 15,
+        paddingBottom: 5,
+        border: "2px solid black",
+        borderRadius: "10px",
+        margin: 0,
+        marginRight: 20,
+      }}
+    >
+      View Live
+    </p>
   );
 }
