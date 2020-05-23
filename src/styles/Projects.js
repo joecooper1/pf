@@ -36,7 +36,7 @@ export const ProjectStyle = styled.div`
         : `220px`
       : props.width > 1024
       ? `${props.width * 0.4}px`
-      : `250px`;
+      : `370px`;
   }};
   background-color: ${(props) => {
     return props.width > 1024 ? "green" : `yellow`;
@@ -90,7 +90,7 @@ export const Info = styled.div`
       ? "90%"
       : "95%";
   }};
-  height: ${(props) => {
+  max-height: ${(props) => {
     return props.type === "vertical" ? "95%" : "50%";
   }};
   display: flex;
