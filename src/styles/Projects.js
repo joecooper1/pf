@@ -58,6 +58,8 @@ export const Link = styled.a`
 export const Image = styled.img`
   height: 90%;
   object-fit: cover;
+  border: 5px solid black;
+  border-radius: 10px;
 `;
 
 export const Info = styled.div`
