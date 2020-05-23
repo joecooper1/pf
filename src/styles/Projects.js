@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+import React from "react";
+
+import { FaGithub } from "react-icons/fa";
+
 export const Box = styled.ul`
   width: ${(props) => `${props.dimensions.width * 0.95}px`};
   background-color: red;
@@ -79,8 +83,8 @@ export const Info = styled.div`
       ? "90%"
       : "95%";
   }};
-  height: ${props => {
-      return props.type === 'vertical' ? '95%' : '50%';
+  height: ${(props) => {
+    return props.type === "vertical" ? "95%" : "50%";
   }};
   display: flex;
   flex-direction: column;
@@ -96,3 +100,22 @@ export const Text = styled.p`
   }};
   background-color: white;
 `;
+
+export function GithubLink() {
+  return (
+    <FaGithub
+      size={50}
+      style={{
+        backgroundColor: "rgba(0, 0, 0, 0.3)",
+        width: 50,
+        height: 30,
+        paddingLeft: 20,
+        paddingRight: 20,
+        paddingTop: 10,
+        paddingBottom: 10,
+        border: "2px solid black",
+        borderRadius: "10px",
+      }}
+    />
+  );
+}
