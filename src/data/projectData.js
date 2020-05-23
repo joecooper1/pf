@@ -24,7 +24,7 @@ export const projectData = [
     github: "https://github.com/joecooper1/nc-news-frontend",
     link: "https://nc-news-joecooper1.netlify.app/",
     description:
-      "The frontend of my Reddit-like news app, built in React, using Axios, Reach Router and styled-components. It displays the most recent articles, the top users, 'trending' articles based on an algorithm I designed, and a search feature. The background is dynamic and made using CSS.",
+      "The frontend of my Reddit-like news website, built in React, using Axios, Reach Router and styled-components. It displays the most recent articles, the top users, and 'trending' articles based on an algorithm I designed. It features pagination, filtering by topic or author, a favourites system, and a search function.  The background is dynamic and made using CSS.",
     url: ncNews,
   },
 ];
