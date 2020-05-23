@@ -22,7 +22,7 @@ export default function Project(props) {
   return (
     <ProjectStyle width={dimensions.width} type={type}>
       <Image src={data.url} alt={`Screenshot of ${data.name}`} type={type} />
-      <Info width={dimensions.width}>
+      <Info width={dimensions.width} type={type}>
         <Title width={dimensions.width}>{data.name}</Title>
         <Link href={data.github} width={dimensions.width}>
           {githubLink}

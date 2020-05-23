@@ -65,7 +65,7 @@ export const Image = styled.img`
 
 export const Info = styled.div`
   width: ${(props) => {
-    return props.width > 1024 ? "60%" : "70%";
+    return props.type === 'vertical' ? props.width > 1024 ? "60%" : "70%" : props.width > 1024 ? "90%" : "95%";
   }};
   height: 95%;
   display: flex;
