@@ -26,7 +26,13 @@ export const ProjectStyle = styled.div`
       : `${props.width * 0.95}px`;
   }};
   height: ${(props) => {
-    return props.width > 1024 ? `${props.width * 0.3}px` : `220px`;
+    return props.type === "vertical"
+      ? props.width > 1024
+        ? `${props.width * 0.3}px`
+        : `220px`
+      : props.width > 1024
+      ? `${props.width * 0.4}px`
+      : `250px`;
   }};
   background-color: ${(props) => {
     return props.width > 1024 ? "green" : `yellow`;
@@ -65,11 +71,20 @@ export const Image = styled.img`
 
 export const Info = styled.div`
   width: ${(props) => {
-    return props.type === 'vertical' ? props.width > 1024 ? "60%" : "70%" : props.width > 1024 ? "90%" : "95%";
+    return props.type === "vertical"
+      ? props.width > 1024
+        ? "60%"
+        : "70%"
+      : props.width > 1024
+      ? "90%"
+      : "95%";
   }};
-  height: 95%;
+  height: ${props => {
+      return props.type === 'vertical' ? '95%' : '50%';
+  }};
   display: flex;
   flex-direction: column;
+  background-color: orange;
 `;
 
 export const Text = styled.p`
