@@ -26,25 +26,23 @@ export const ProjectStyle = styled.div`
       : `${props.width * 0.95}px`;
   }};
   height: ${(props) => {
-    return props.width > 1024
-      ? `${props.width * 0.3}px`
-      : `220px`;
+    return props.width > 1024 ? `${props.width * 0.3}px` : `220px`;
   }};
   background-color: ${(props) => {
-    return props.width > 1024
-      ? 'green'
-      : `yellow`;
+    return props.width > 1024 ? "green" : `yellow`;
   }};
   margin-top: 10px;
   display: flex;
-  flex-direction: row;
+  flex-direction: ${(props) => {
+    return props.type === "vertical" ? "row" : "column";
+  }};
   justify-content: space-evenly;
   align-items: center;
 `;
 
 export const Title = styled.h2`
   font-size: 1em;
-  color: black;  
+  color: black;
   margin: 0;
 `;
 
@@ -56,27 +54,30 @@ export const Link = styled.a`
 `;
 
 export const Image = styled.img`
-  height: 90%;
+  ${(props) => {
+    return props.type === "vertical"
+      ? "height: 90%; border-radius: 10px;"
+      : "width: 90%";
+  }};
   object-fit: cover;
   border: 5px solid black;
-  border-radius: 10px;
 `;
 
 export const Info = styled.div`
-  width: ${props => {
-      return props.width > 1024 ? '60%' : '70%'
-  }}; 
+  width: ${(props) => {
+    return props.width > 1024 ? "60%" : "70%";
+  }};
   height: 95%;
   display: flex;
   flex-direction: column;
 `;
 
 export const Text = styled.p`
-  font-size: ${props => {
-    return props.width > 660 ? '0.5em' : '0.4em'
-  }};;
-  width: ${props => {
-    return props.width > 1024 ? '90%' : '100%'
+  font-size: ${(props) => {
+    return props.width > 660 ? "0.5em" : "0.4em";
+  }};
+  width: ${(props) => {
+    return props.width > 1024 ? "90%" : "100%";
   }};
   background-color: white;
 `;
