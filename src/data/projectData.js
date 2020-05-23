@@ -1,6 +1,7 @@
 import onlyReggae from "../images/onlyReggae.jpg";
 import uFluent from "../images/uFluent.jpg";
 import ncNews from "../images/ncnews.png";
+import ncBackend from "../images/ncbackend.png";
 
 export const projectData = [
   {
@@ -26,5 +27,13 @@ export const projectData = [
     description:
       "The frontend of my Reddit-like news website, built in React, using Axios, Reach Router and styled-components. It displays the most recent articles, the top users, and 'trending' articles based on an algorithm I designed. It features pagination, filtering by topic or author, a favourites system, and a search function.  The background is dynamic and made using CSS.",
     url: ncNews,
+  },
+  {
+    name: "NC News (backend)",
+    github: "https://github.com/joecooper1/nc-news-sprint",
+    link: null,
+    description:
+      "The backend for the NC News app, built using Express, PostgreSQL and Knex. Allows for adding, editing, deleting, upvoting and favouriting articles, adding, editing, deleting and upvoting comment, and searching by various criteria.",
+    url: ncBackend,
   },
 ];
