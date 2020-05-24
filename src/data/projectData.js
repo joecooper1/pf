@@ -64,7 +64,7 @@ export const projectData = [
     github: null,
     link: null,
     description:
-      "I wrote, designed and built a series of small video games to be integrated into live performances, for the cabaret night Flim Nite. All built using GMS language.",
+      "I wrote, designed, created assets for and built a series of small video games to be integrated into my own live performances, for the cabaret night Flim Nite. All built using GMS language.",
     url: [dead, hand, smiles, space, rain, nightmare, angles, beat, car],
   },
 ];
