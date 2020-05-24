@@ -43,7 +43,6 @@ export const projectData = [
   },
   {
     name: "Ghost Machines",
-    subtitle: 'for the Portico Library',
     github: null,
     link: null,
     description:
