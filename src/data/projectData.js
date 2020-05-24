@@ -3,6 +3,11 @@ import uFluent from "../images/uFluent.jpg";
 import ncNews from "../images/ncnews.png";
 import ncBackend from "../images/ncbackend.png";
 
+import box from "../images/box.png";
+import ghost from "../images/ghost.png";
+import meditation from "../images/meditation.png";
+import menu from "../images/menu.png";
+
 export const projectData = [
   {
     name: "Only Reggae",
@@ -35,5 +40,13 @@ export const projectData = [
     description:
       "The backend for the NC News app, built using Express, PostgreSQL and Knex. Allows for adding, editing, deleting, upvoting and favouriting articles, adding, editing, deleting and upvoting comment, and searching by various criteria.",
     url: ncBackend,
+  },
+  {
+    name: "Ghost Machines\nfor the Portico Library",
+    github: null,
+    link: null,
+    description:
+      "A small downloadable game made for literary night First Draft at The Portico Library. It allows users to interact with various simulated ghost-hunting and spirtual communication technologies from history. Built using GMT language, which is an app-specific language, and a cross between Javascript and C.",
+    url: [box, ghost, meditation, menu],
   },
 ];
