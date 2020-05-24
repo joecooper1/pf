@@ -43,7 +43,7 @@ export default function Project(props) {
       : "horizontal";
   //Set what the image should be based on whether its a slideshow or a static image
   const image =
-    data.name === "Ghost Machines" ? (
+    data.name === "Ghost Machines" || data.name === "Various Projects" ? (
       <Slideshow fadeImages={data.url}/>
     ) : (
       <Image src={data.url} alt={`Screenshot of ${data.name}`} type={type} />
