@@ -8,6 +8,16 @@ import ghost from "../images/ghost.png";
 import meditation from "../images/meditation.png";
 import menu from "../images/menu.png";
 
+import angles from '../images/angles.png';
+import beat from '../images/beat.png';
+import car from '../images/car.png';
+import space from '../images/space.png';
+import rain from '../images/rain.png';
+import nightmare from '../images/nightmare.png';
+import dead from '../images/dead/png';
+import hand from '../images/hand.png';
+import smiles from '../images/smiles.png';
+
 export const projectData = [
   {
     name: "Only Reggae",
@@ -55,6 +65,6 @@ export const projectData = [
     link: null,
     description:
       "I wrote, designed and built a series of small video games to be integrated into live performances, for the cabaret night Flim Nite. All built using GMS language.",
-    url: [box, ghost, meditation, menu],
+    url: [dead, hand, smiles, space, rain, nightmare, angles, beat, car],
   },
 ];
