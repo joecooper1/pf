@@ -11,7 +11,7 @@ const fadeProperties = {
   }
 }
  
-const Slideshow = (fadeImages) => {
+export const Slideshow = (fadeImages) => {
   return (
     <div className="slide-container">
       <Fade {...fadeProperties}>
