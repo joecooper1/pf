@@ -60,7 +60,7 @@ export const projectData = [
     url: [box, ghost, meditation, menu],
   },
   {
-    name: "Various Projects",
+    name: "Flim Nite",
     github: null,
     link: null,
     description:
