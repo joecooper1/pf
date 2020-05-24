@@ -14,25 +14,28 @@ const fadeProperties = {
 
 export const Slideshow = ({ fadeImages }) => {
   return (
-    <div className="slide-container" style={{ width: "70%" }}>
-      <Fade {...fadeProperties}>
-        {fadeImages.map((image) => {
-          return (
-            <div className="each-fade" key={image}>
-              <div className="image-container">
-                <img
-                  src={image}
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "contain",
-                  }}
-                />
+    <div style={{ width: "90%", display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <div className="slide-container" style={{ width: "80%" }}>
+        <Fade {...fadeProperties}>
+          {fadeImages.map((image) => {
+            return (
+              <div className="each-fade" key={image}>
+                <div className="image-container">
+                  <img
+                    src={image}
+                    style={{
+                      width: "100%",
+                      height: "100%",
+                      objectFit: "contain",
+                      // border: '5px solid black'
+                    }}
+                  />
+                </div>
               </div>
-            </div>
-          );
-        })}
-      </Fade>
+            );
+          })}
+        </Fade>
+      </div>
     </div>
   );
 };
