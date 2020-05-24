@@ -14,7 +14,7 @@ import car from '../images/car.png';
 import space from '../images/space.png';
 import rain from '../images/rain.png';
 import nightmare from '../images/nightmare.png';
-import dead from '../images/dead/png';
+import dead from '../images/dead.png';
 import hand from '../images/hand.png';
 import smiles from '../images/smiles.png';
 
