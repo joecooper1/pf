@@ -1,38 +1,39 @@
 import React from 'react';
-import { Slide } from 'react-slideshow-image';
+import { Fade } from 'react-slideshow-image';
  
-const properties = {
+const fadeProperties = {
   duration: 5000,
   transitionDuration: 500,
-  infinite: true,
+  infinite: false,
   indicators: true,
-  arrows: true,
-  pauseOnHover: true,
   onChange: (oldIndex, newIndex) => {
-    console.log(`slide transition from ${oldIndex} to ${newIndex}`);
+    console.log(`fade transition from ${oldIndex} to ${newIndex}`);
   }
 }
  
-export const Slideshow = (slideImages) => {
-    return (
-      <div className="slide-container">
-        <Slide {...properties}>
-          <div className="each-slide">
-            <div style={{'backgroundImage': `url(${slideImages[0]})`}}>
-              <span>Slide 1</span>
-            </div>
+const Slideshow = (fadeImages) => {
+  return (
+    <div className="slide-container">
+      <Fade {...fadeProperties}>
+        <div className="each-fade">
+          <div className="image-container">
+            <img src={fadeImages[0]} />
           </div>
-          <div className="each-slide">
-            <div style={{'backgroundImage': `url(${slideImages[1]})`}}>
-              <span>Slide 2</span>
-            </div>
+          <h2>First Slide</h2>
+        </div>
+        <div className="each-fade">
+          <div className="image-container">
+            <img src={fadeImages[1]} />
           </div>
-          <div className="each-slide">
-            <div style={{'backgroundImage': `url(${slideImages[2]})`}}>
-              <span>Slide 3</span>
-            </div>
+          <h2>Second Slide</h2>
+        </div>
+        <div className="each-fade">
+          <div className="image-container">
+            <img src={fadeImages[2]} />
           </div>
-        </Slide>
-      </div>
-    )
+          <h2>Third Slide</h2>
+        </div>
+      </Fade>
+    </div>
+  )
 }
