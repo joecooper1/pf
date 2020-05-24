@@ -46,7 +46,15 @@ export const projectData = [
     github: null,
     link: null,
     description:
-      "A small downloadable game made for literary night First Draft at The Portico Library. It allows users to interact with various simulated ghost-hunting and spirtual communication technologies from history. Built using GMT language, which is an app-specific language, and a cross between Javascript and C.",
+      "A small downloadable game made for literary night First Draft at The Portico Library. It allows users to interact with various simulated ghost-hunting and spirit communication technologies from history. Built using GMS language, which is an app-specific language, and a cross between Javascript and C.",
+    url: [box, ghost, meditation, menu],
+  },
+  {
+    name: "Various Projects",
+    github: null,
+    link: null,
+    description:
+      "I wrote, designed and built a series of small video games to be integrated into live performances, for the cabaret night Flim Nite. All built using GMS language.",
     url: [box, ghost, meditation, menu],
   },
 ];
