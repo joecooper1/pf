@@ -17,9 +17,11 @@ export const Slideshow = ({ fadeImages }) => {
     <div
       style={{
         width: "90%",
+        height: "60%",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        backgroundColor: "rgba(0, 0, 0, 0.6)",
       }}
     >
       <div className="slide-container" style={{ width: "80%" }}>
