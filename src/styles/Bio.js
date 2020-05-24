@@ -37,6 +37,6 @@ export const View = styled.header`
 `;
 
 export const Link = styled.a`
-  color: black;
-  text-decoration: none;
+  color: palevioletred;
+  text-decoration: underline;
 `;

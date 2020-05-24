@@ -6,11 +6,12 @@ import { FaGithub } from "react-icons/fa";
 
 export const Box = styled.ul`
   width: ${(props) => `${props.dimensions.width * 0.95}px`};
-  background-color: red;
+  background-color: rgba(0, 0, 0, 0.2);
   min-height: 150px;
   margin-bottom: 100px;
   margin-left: 0px;
   padding-left: 0px;
+  padding-bottom: 10px;
   display: flex;
   flex-direction: ${(props) => {
     return props.dimensions.width > 1024 ? "row" : "column";
@@ -38,9 +39,10 @@ export const ProjectStyle = styled.div`
       ? `${props.width * 0.4}px`
       : `370px`;
   }};
-  background-color: ${(props) => {
-    return props.width > 1024 ? "green" : `yellow`;
-  }};
+  background-color: white;
+  // border: 3px solid black;
+  box-shadow: 5px 5px grey;
+  border-radius: 10px;
   margin-top: 10px;
   display: flex;
   flex-direction: ${(props) => {
@@ -60,7 +62,6 @@ export const Links = styled.nav`
   display: flex;
   flex-direction: row;
   align-self: flex-end;
-  background-color: pink;
   ${props => {
     return props.width > 1024 ? "" : "width: 100%; justify-content: space-between";
   }}
@@ -100,7 +101,6 @@ export const Info = styled.div`
   }};
   display: flex;
   flex-direction: column;
-  background-color: orange;
 `;
 
 export const Text = styled.p`
@@ -110,7 +110,6 @@ export const Text = styled.p`
   width: ${(props) => {
     return props.width > 1024 ? "100%" : "100%";
   }};
-  background-color: white;
 `;
 
 export function GithubLink() {

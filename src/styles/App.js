@@ -6,7 +6,7 @@ export const Window = styled.h1`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  background-color: blue;
+  // background-color: blue;
   margin: 0;
   flex-direction: column;
 `;
