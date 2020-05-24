@@ -42,7 +42,8 @@ export const projectData = [
     url: ncBackend,
   },
   {
-    name: "Ghost Machines\nfor the Portico Library",
+    name: "Ghost Machines",
+    subtitle: 'for the Portico Library',
     github: null,
     link: null,
     description:
