@@ -32,26 +32,6 @@ export const Slideshow = ({ fadeImages }) => {
             </div>
           );
         })}
-        {/* <div className="each-fade">
-          <div className="image-container">
-            <img src={fadeImages[0]} />
-          </div>
-        </div>
-        <div className="each-fade">
-          <div className="image-container">
-            <img src={fadeImages[1]} />
-          </div>
-        </div>
-        <div className="each-fade">
-          <div className="image-container">
-            <img src={fadeImages[2]} />
-          </div>
-        </div>
-        <div className="each-fade">
-          <div className="image-container">
-            <img src={fadeImages[3]} />
-          </div>
-        </div> */}
       </Fade>
     </div>
   );
