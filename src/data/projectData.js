@@ -32,7 +32,7 @@ export const projectData = [
     github: "https://github.com/uFluent/frontend",
     link: null,
     description:
-      "An educational app designed to help children learn new vocabulary in various languages.\nThe in-built camera app uses machine learning to reocgnise and translate household objects, and vocabulary quizzes help kids to memorise words.\nBuilt as a final project at Northcoders bootcamp with a team of four other people, in React Native and Python.",
+      "An educational app designed to help children learn new vocabulary in various languages.\nThe in-built camera app uses machine learning to recognise and translate household objects, and vocabulary quizzes help kids to memorise words.\nBuilt as a final project at Northcoders bootcamp with a team of four other people, in React Native and Python.",
     url: uFluent,
   },
   {
