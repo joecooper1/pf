@@ -1,45 +1,58 @@
-import React from 'react';
-import { Fade } from 'react-slideshow-image';
- 
+import React from "react";
+import { Fade } from "react-slideshow-image";
+
 const fadeProperties = {
   duration: 5000,
   transitionDuration: 500,
-  infinite: false,
-  indicators: true,
+  infinite: true,
+  arrows: true,
+  indicators: false,
   onChange: (oldIndex, newIndex) => {
     console.log(`fade transition from ${oldIndex} to ${newIndex}`);
-  }
-}
- 
-export const Slideshow = (fadeImages) => {
+  },
+};
+
+export const Slideshow = ({ fadeImages }) => {
   return (
-    <div className="slide-container">
+    <div className="slide-container" style={{ width: "70%" }}>
       <Fade {...fadeProperties}>
-        <div className="each-fade">
+        {fadeImages.map((image) => {
+          return (
+            <div className="each-fade" key={image}>
+              <div className="image-container">
+                <img
+                  src={image}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "contain",
+                  }}
+                />
+              </div>
+            </div>
+          );
+        })}
+        {/* <div className="each-fade">
           <div className="image-container">
             <img src={fadeImages[0]} />
           </div>
-          <h2>First Slide</h2>
         </div>
         <div className="each-fade">
           <div className="image-container">
             <img src={fadeImages[1]} />
           </div>
-          <h2>Second Slide</h2>
         </div>
         <div className="each-fade">
           <div className="image-container">
             <img src={fadeImages[2]} />
           </div>
-          <h2>Third Slide</h2>
         </div>
         <div className="each-fade">
           <div className="image-container">
             <img src={fadeImages[3]} />
           </div>
-          <h2>Fourth Slide</h2>
-        </div>
+        </div> */}
       </Fade>
     </div>
-  )
-}
+  );
+};
