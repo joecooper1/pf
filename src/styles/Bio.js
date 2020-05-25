@@ -29,9 +29,6 @@ export const SmallText = styled.p`
 export const View = styled.header`
   display: flex;
   flex-direction: column;
-  margin-top: ${props=> {
-    return props.dimensions.width > 1024 ? '0' : '-100px'
-  }};
   height: ${props => `${props.dimensions.height}px`};
   justify-content: center;
 `;
