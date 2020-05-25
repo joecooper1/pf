@@ -17,7 +17,7 @@ export const Portfolio = styled.div`
 export const Box = styled.ul`
   width: ${(props) => `${props.dimensions.width * 0.95}px`};
   min-height: 150px;
-  margin-bottom: 100px;
+  margin-bottom: 40px;
   margin-left: 0px;
   padding-left: 0px;
   padding-bottom: 10px;
@@ -129,6 +129,16 @@ export const Text = styled.p`
   width: ${(props) => {
     return props.width > 1024 ? "100%" : "100%";
   }};
+`;
+
+export const BackToTopButton = styled.button`
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid black;
+  border-radius: 5px;
+  margin-top: 0;
+  margin-bottom: 40px;
+  font-size: 30px;
+  padding: 5px 20px 5px 20px;
 `;
 
 export function GithubLink() {
