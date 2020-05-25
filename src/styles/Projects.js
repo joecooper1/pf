@@ -132,13 +132,23 @@ export const Text = styled.p`
 `;
 
 export const BackToTopButton = styled.button`
-  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  background-color: rgba(0, 0, 0, 1);
   border: 1px solid black;
   border-radius: 5px;
   margin-top: 0;
-  margin-bottom: 40px;
   font-size: 30px;
   padding: 5px 20px 5px 20px;
+  z-index: 1;
+`;
+
+export const Footer = styled.footer`
+  background-color: black;
+  width: 100%;
+  height: 40px;
+  z-index: 0;
+  position: relative;
+  margin-top: -20px;
 `;
 
 export function GithubLink() {

@@ -1,6 +1,12 @@
 import React from "react";
 
-import { Box, PortfolioTitle, Portfolio, BackToTopButton } from "../styles/Projects";
+import {
+  Box,
+  PortfolioTitle,
+  Portfolio,
+  BackToTopButton,
+  Footer,
+} from "../styles/Projects";
 import Project from "./Project";
 
 import { projectData } from "../data/projectData";
@@ -14,7 +20,10 @@ export default function ProjectBox(props) {
           return <Project dimensions={props} data={data} key={data.name} />;
         })}
       </Box>
-      <BackToTopButton onClick={props.scrollToBio} >^{"\n"}Back to bio</BackToTopButton>
+      <BackToTopButton onClick={props.scrollToBio}>
+        ^{"\n"}Back to bio
+      </BackToTopButton>
+      <Footer></Footer>
     </Portfolio>
   );
 }
