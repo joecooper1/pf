@@ -48,7 +48,7 @@ export const projectData = [
     github: "https://github.com/joecooper1/nc-news-sprint",
     link: null,
     description:
-      "The backend for the NC News app, built using Express, PostgreSQL and Knex. Allows for adding, editing, deleting, upvoting and favouriting articles, adding, editing, deleting and upvoting comment, and searching by various criteria.",
+      "The backend for the NC News app, built using Express, PostgreSQL and Knex. Allows for adding, editing, deleting, upvoting and favouriting articles, adding, editing, deleting and upvoting comments, and searching by various criteria.",
     url: ncBackend,
   },
   {
