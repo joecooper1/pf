@@ -157,14 +157,14 @@ export function GithubLink() {
       size={50}
       style={{
         backgroundColor: "rgba(0, 0, 0, 0.3)",
-        width: 50,
+        width: 30,
         height: 30,
-        paddingLeft: 20,
-        paddingRight: 20,
+        paddingLeft: 10,
+        paddingRight: 10,
         paddingTop: 10,
         paddingBottom: 10,
         border: "2px solid black",
-        borderRadius: "10px",
+        borderRadius: "50%",
       }}
     />
   );
