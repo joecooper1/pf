@@ -6,7 +6,7 @@ import { FaGithub } from "react-icons/fa";
 
 export const Box = styled.ul`
   width: ${(props) => `${props.dimensions.width * 0.95}px`};
-  background-color: rgba(0, 0, 0, 0.2);
+  // background-color: rgba(0, 0, 0, 0.2);
   min-height: 150px;
   margin-bottom: 100px;
   margin-left: 0px;
@@ -34,21 +34,23 @@ export const ProjectStyle = styled.div`
     return props.type === "vertical"
       ? props.width > 1024
         ? `${props.width * 0.3}px`
-        : `220px`
+        : `300px`
       : props.width > 1024
       ? `${props.width * 0.4}px`
-      : `370px`;
+      : ``;
   }};
-  background-color: white;
+  // background-color: lightgrey;
   // border: 3px solid black;
-  box-shadow: 5px 5px grey;
-  border-radius: 10px;
+  box-shadow: 1px 1px 2px 2px grey;
+  // border-radius: 10px;
   margin-top: 10px;
   display: flex;
   flex-direction: ${(props) => {
     return props.type === "vertical" ? "row" : "column";
   }};
-  justify-content: space-evenly;
+  justify-content: ${(props) => {
+    return props.type === "vertical" ? "space-evenly" : "flex-start";
+  }};
   align-items: center;
 `;
 
@@ -79,11 +81,10 @@ export const Link = styled.a`
 export const Image = styled.img`
   ${(props) => {
     return props.type === "vertical"
-      ? "height: 90%; border-radius: 10px;"
-      : "width: 90%";
+      ? "height: 90%; border-radius: 10px; border: 5px solid black;"
+      : "width: 100%; height: 45%;";
   }};
   object-fit: cover;
-  border: 5px solid black;
 `;
 
 export const Info = styled.div`
@@ -91,16 +92,18 @@ export const Info = styled.div`
     return props.type === "vertical"
       ? props.width > 1024
         ? "60%"
-        : "70%"
+        : "50%"
       : props.width > 1024
       ? "90%"
       : "95%";
   }};
-  max-height: ${(props) => {
-    return props.type === "vertical" ? "95%" : "50%";
+  height: ${(props) => {
+    return props.type === "vertical" ? "95%" : "";
   }};
   display: flex;
   flex-direction: column;
+  padding-top: 10px;
+  padding-bottom: 10px;
 `;
 
 export const Text = styled.p`

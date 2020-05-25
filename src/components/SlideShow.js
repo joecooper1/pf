@@ -16,7 +16,7 @@ export const Slideshow = ({ fadeImages, name }) => {
   return (
     <div
       style={{
-        width: "90%",
+        width: "100%",
         height: "60%",
         display: "flex",
         alignItems: "center",
@@ -26,7 +26,7 @@ export const Slideshow = ({ fadeImages, name }) => {
     >
       <div
         className="slide-container"
-        style={{ width: `${name === "Flim Nite" ? "96%" : "75%"}` }}
+        style={{ width: `${name === "Flim Nite" ? "90%" : "70%"}` }}
       >
         <Fade {...fadeProperties}>
           {fadeImages.map((image) => {
