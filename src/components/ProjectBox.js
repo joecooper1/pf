@@ -14,6 +14,7 @@ export default function ProjectBox(props) {
           return <Project dimensions={props} data={data} key={data.name} />;
         })}
       </Box>
+      <p onClick={props.scrollToBio} >Top</p>
     </Portfolio>
   );
 }
