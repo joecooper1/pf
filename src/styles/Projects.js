@@ -24,7 +24,7 @@ export const Box = styled.ul`
   align-content: space-around;
 `;
 
-export const ProjectStyle = styled.div`
+export const ProjectStyle = styled.li`
   width: ${(props) => {
     return props.width > 1024
       ? `${props.width * 0.45}px`
@@ -54,7 +54,16 @@ export const ProjectStyle = styled.div`
   align-items: center;
 `;
 
-export const Title = styled.h2`
+export const PortfolioTitle = styled.h2`
+  font-size: ${props=> {
+    return props.dimensions.width > 1024 ? '2em' : '1em'
+  }};
+  text-align: center;
+  color: black;
+  margin: 0;
+`;
+
+export const Title = styled.h3`
   font-size: 1em;
   color: black;
   margin: 0;
