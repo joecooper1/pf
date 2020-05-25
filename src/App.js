@@ -8,7 +8,7 @@ import ProjectBox from "./components/ProjectBox";
 import useWindowDimensions from "./utils/useWindowDimensions";
 
 //Scroll to element function
-const scrollToRef = () => window.scrollTo(0, 0);
+const scrollToBio = () => window.scrollTo(0, 0);
 
 function App() {
   const { height, width } = useWindowDimensions();
