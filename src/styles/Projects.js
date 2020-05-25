@@ -4,9 +4,18 @@ import React from "react";
 
 import { FaGithub } from "react-icons/fa";
 
+export const Portfolio = styled.div`
+  background-color: palevioletred;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 40px;
+`;
+
 export const Box = styled.ul`
   width: ${(props) => `${props.dimensions.width * 0.95}px`};
-  // background-color: rgba(0, 0, 0, 0.2);
   min-height: 150px;
   margin-bottom: 100px;
   margin-left: 0px;
@@ -39,10 +48,8 @@ export const ProjectStyle = styled.li`
       ? `${props.width * 0.4}px`
       : ``;
   }};
-  // background-color: lightgrey;
-  // border: 3px solid black;
+  background-color: white;
   box-shadow: 1px 1px 2px 2px grey;
-  // border-radius: 10px;
   margin-top: 10px;
   display: flex;
   flex-direction: ${(props) => {
