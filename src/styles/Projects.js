@@ -15,7 +15,11 @@ export const Portfolio = styled.div`
 `;
 
 export const Box = styled.ul`
-  width: ${(props) => `${props.dimensions.width * 0.95}px`};
+  width: ${(props) => {
+    return props.dimensions.width > 1024
+      ? `${props.dimensions.width * 0.95}px`
+      : `${props.dimensions.width}px`;
+  }};
   min-height: 150px;
   margin-bottom: 40px;
   margin-left: 0px;
@@ -62,8 +66,8 @@ export const ProjectStyle = styled.li`
 `;
 
 export const PortfolioTitle = styled.h2`
-  font-size: ${props=> {
-    return props.dimensions.width > 1024 ? '2em' : '1em'
+  font-size: ${(props) => {
+    return props.dimensions.width > 1024 ? "2em" : "1em";
   }};
   text-align: center;
   color: white;
@@ -80,15 +84,17 @@ export const Links = styled.nav`
   display: flex;
   flex-direction: row;
   align-self: flex-end;
-  ${props => {
-    return props.width > 1024 ? "" : "width: 100%; justify-content: space-between";
+  ${(props) => {
+    return props.width > 1024
+      ? ""
+      : "width: 100%; justify-content: space-between";
   }}
 `;
 
 export const Link = styled.a`
   font-size: 0.4em;
   color: black;
-  text-decoration: ${props => {
+  text-decoration: ${(props) => {
     return props.width > 1024 ? "none" : "underline";
   }};
   margin-top: 20;
