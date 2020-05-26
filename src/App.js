@@ -16,12 +16,14 @@ function App() {
   const { height, width } = useWindowDimensions();
 
   return (
+    <>
+    <Canvas height={height} width={width} />
     <Window height={height} width={width}>
-      {/* <Canvas height={height} width={width} /> */}
       <Bio height={height} width={width} />
       <About height={height} width={width} />
       <ProjectBox scrollToBio={scrollToBio} height={height} width={width} />
     </Window>
+    </>
   );
 }
 
