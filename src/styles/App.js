@@ -9,4 +9,5 @@ export const Window = styled.h1`
   // background-color: blue;
   margin: 0;
   flex-direction: column;
+  font-family: 'Roboto Slab', serif;
 `;
