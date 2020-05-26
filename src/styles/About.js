@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 export const View = styled.div`
-  max-width: ${(props) => `${props.dimensions.width * 0.95}px`};
+  max-width: 100%;
   padding: ${(props) => {
-    return props.dimensions.width > 1024 ? "30px" : "5px";
+    return props.dimensions.width > 1024 ? "10px" : "0px";
   }};
   background-color: black;
   display: flex;
@@ -18,6 +18,7 @@ export const Text = styled.p`
   font-size: 20px;
   color: white;
   margin-left: 5%;
+  margin-right: 0%;
   width: ${(props) => {
     return props.dimensions.width > 1024 ? "50%" : "90%";
   }};
@@ -25,14 +26,14 @@ export const Text = styled.p`
 `;
 
 export const Skills = styled.div`
-  margin: 0;
+  margin: 0px;
   color: white;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   width: ${(props) => {
-    return props.dimensions.width > 1024 ? "30%" : "90%";
+    return props.dimensions.width > 1024 ? "40%" : "90%";
   }};
   margin-left: ${(props) => {
     return props.dimensions.width > 1024 ? "10%" : "5%";
@@ -56,6 +57,7 @@ export const LogoBar = styled.ul`
   justify-content: space-between;
   flex-wrap: wrap;
   max-width: 100%;
+  margin: 0;
 `;
 
 export const Logo = styled.li`
