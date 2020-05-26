@@ -5,7 +5,7 @@ import React from "react";
 import { FaGithub } from "react-icons/fa";
 
 export const Portfolio = styled.div`
-  background-color: palevioletred;
+  background-color: rgb(64, 66, 108);
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -48,9 +48,9 @@ export const ProjectStyle = styled.li`
       ? `${props.width * 0.4}px`
       : ``;
   }};
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.6);
   box-shadow: 1px 1px 2px 2px grey;
-  margin-top: 10px;
+  margin-top: 20px;
   display: flex;
   flex-direction: ${(props) => {
     return props.type === "vertical" ? "row" : "column";
@@ -66,7 +66,7 @@ export const PortfolioTitle = styled.h2`
     return props.dimensions.width > 1024 ? '2em' : '1em'
   }};
   text-align: center;
-  color: black;
+  color: white;
   margin: 0;
 `;
 
