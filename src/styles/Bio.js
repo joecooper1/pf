@@ -15,6 +15,7 @@ export const Text = styled.p`
   }};
   text-align: center;
   // color: palevioletred;
+  margin-top: 0;
 `;
 
 export const SmallText = styled.p`
@@ -35,8 +36,11 @@ export const View = styled.div`
 
 export const SmallView = styled.div`
   background-color: rgba(64, 66, 108, 0.4);
-  padding: 40px;
+  padding: ${props=> {
+    return props.dimensions.width > 1024 ? '40px' : '20px'
+  }};
   border-radius: 20px;
+  margin: 0;
 `;
 
 export const Link = styled.a`

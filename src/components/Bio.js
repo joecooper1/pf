@@ -6,7 +6,6 @@ export default function Bio(props) {
   return (
     <View dimensions={props}>
       <SmallView dimensions={props}>
-        {/* <Title dimensions={props}>Joe Cooper</Title> */}
         <Text dimensions={props}>
           Hi. I'm Joe.<br></br> I'm a full-stack software developer.
         </Text>
