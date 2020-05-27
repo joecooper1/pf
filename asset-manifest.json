@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/pf/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/pf/static/js/main.03ae4408.chunk.js",
+    "main.js.map": "/pf/static/js/main.03ae4408.chunk.js.map",
+    "runtime-main.js": "/pf/static/js/runtime-main.d23640c1.js",
+    "runtime-main.js.map": "/pf/static/js/runtime-main.d23640c1.js.map",
+    "static/css/2.043b003d.chunk.css": "/pf/static/css/2.043b003d.chunk.css",
+    "static/js/2.9cd5908f.chunk.js": "/pf/static/js/2.9cd5908f.chunk.js",
+    "static/js/2.9cd5908f.chunk.js.map": "/pf/static/js/2.9cd5908f.chunk.js.map",
+    "index.html": "/pf/index.html",
+    "precache-manifest.53fc9048d32979b75b5d45c87c6e7261.js": "/pf/precache-manifest.53fc9048d32979b75b5d45c87c6e7261.js",
+    "service-worker.js": "/pf/service-worker.js",
+    "static/css/2.043b003d.chunk.css.map": "/pf/static/css/2.043b003d.chunk.css.map",
+    "static/css/main.5ecd60fb.chunk.css.map": "/pf/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.9cd5908f.chunk.js.LICENSE.txt": "/pf/static/js/2.9cd5908f.chunk.js.LICENSE.txt",
+    "static/media/angles.png": "/pf/static/media/angles.a14e3f31.png",
+    "static/media/beat.png": "/pf/static/media/beat.f19fc8e7.png",
+    "static/media/box.png": "/pf/static/media/box.772e97a0.png",
+    "static/media/car.png": "/pf/static/media/car.0c5efcee.png",
+    "static/media/dead.png": "/pf/static/media/dead.e646d086.png",
+    "static/media/ghost.png": "/pf/static/media/ghost.79f6a87e.png",
+    "static/media/hand.png": "/pf/static/media/hand.ba779395.png",
+    "static/media/meditation.png": "/pf/static/media/meditation.535c3b17.png",
+    "static/media/menu.png": "/pf/static/media/menu.9bcf7245.png",
+    "static/media/ncbackend.png": "/pf/static/media/ncbackend.1ff45989.png",
+    "static/media/ncnews.png": "/pf/static/media/ncnews.07bcfe28.png",
+    "static/media/nightmare.png": "/pf/static/media/nightmare.efdb9fe5.png",
+    "static/media/onlyReggae.jpg": "/pf/static/media/onlyReggae.9185b13b.jpg",
+    "static/media/rain.png": "/pf/static/media/rain.3a34f702.png",
+    "static/media/smiles.png": "/pf/static/media/smiles.3a6ae31b.png",
+    "static/media/space.png": "/pf/static/media/space.01dc2564.png",
+    "static/media/uFluent.jpg": "/pf/static/media/uFluent.8bdf874f.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d23640c1.js",
+    "static/css/2.043b003d.chunk.css",
+    "static/js/2.9cd5908f.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.03ae4408.chunk.js"
+  ]
+}
