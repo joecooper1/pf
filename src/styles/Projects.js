@@ -5,7 +5,7 @@ import React from "react";
 import { FaGithub } from "react-icons/fa";
 
 export const Portfolio = styled.div`
-  background-color: rgb(64, 66, 108);
+  background-color: darkgrey;
   width: 100%;
   display: flex;
   flex-direction: column;
