@@ -25,8 +25,21 @@ export default function DynamicRainbowGridComponent(props) {
     const canvas = canvasRef.current;
     if (canvas) {
       const ctx = canvas.getContext("2d");
-      dynamicRainbowGrid(ctx, width, height, arrayOfPoints, setArrayOfPoints, colors);
+      dynamicRainbowGrid(
+        ctx,
+        width,
+        height,
+        arrayOfPoints,
+        setArrayOfPoints,
+        colors,
+        count
+      );
     }
+    //Set timeout to move to next step
+    if (count < 50)
+      setTimeout(() => {
+        setCount(count + 1);
+      }, 300);
   });
 
   //Set height and width of canvas
