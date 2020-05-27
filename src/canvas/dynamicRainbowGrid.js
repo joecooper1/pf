@@ -16,7 +16,7 @@ export default function dynamicRainbowGrid(ctx, width, height) {
 
   //Make function to get random number between -5 and 5
   const randomNum = () => {
-    return Math.floor(Math.random() * 20 - 10);
+    return Math.floor(Math.random() * 30 - 15);
   };
 
   //Make colors and draw circles
