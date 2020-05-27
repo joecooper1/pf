@@ -30,19 +30,26 @@ export default function dynamicRainbowGrid(
     return Math.floor(Math.random() * 30 - 15);
   };
 
+  //Reset color1 values
+  const resetColor1Values = (coords) => {
+    coords.r1 = coords.r2;
+    coords.g1 = coords.g2;
+    coords.b1 = coords.b2;
+  };
+
   //Get color2 values
-  const getColor2Values = (coords, i, j) => {
+  const getColor2Values = (coords, i, j, order = 'initial') => {
     //Set color2 values using values of circle to left
     if (i > 0) {
       coords.r2 = arrayOfPoints[i - 1][j].r;
       coords.g2 = arrayOfPoints[i - 1][j].g;
       coords.b2 = arrayOfPoints[i - 1][j].b;
-    } else if (i === 0 && j === 0) {
+    } else if (i === 0 && j === 0 && order === 'initial') {
       //Or if they are at the far left top corner, set a new value
       coords.r2 = coords.r1 + randomNum();
       coords.g2 = coords.g1 + randomNum();
       coords.b2 = coords.b1 + randomNum();
-    } else {
+    } else if (order === 'initial') {
       //Or if they are on the left side, but not the top left corner
       coords.r2 =
         (coords.r1 + randomNum() + arrayOfPoints[i][j - 1].r) / 2 + randomNum();
@@ -50,6 +57,19 @@ export default function dynamicRainbowGrid(
         (coords.g1 + randomNum() + arrayOfPoints[i][j - 1].g) / 2 + randomNum();
       coords.b2 =
         (coords.b1 + randomNum() + arrayOfPoints[i][j - 1].b) / 2 + randomNum();
+    } else if (i === 0 && j === rows - 1 && order === 'update') {
+      //If they are at the left bottom corner, while updating
+      coords.r2 = coords.r1 + randomNum();
+      coords.g2 = coords.g1 + randomNum();
+      coords.b2 = coords.b1 + randomNum();
+    } else if (order === 'update') {
+      //They are on the left hand side, but not in the bottom corner
+      coords.r2 =
+        (coords.r1 + randomNum() + arrayOfPoints[i][j + 1].r) / 2 + randomNum();
+      coords.g2 =
+        (coords.g1 + randomNum() + arrayOfPoints[i][j + 1].g) / 2 + randomNum();
+      coords.b2 =
+        (coords.b1 + randomNum() + arrayOfPoints[i][j + 1].b) / 2 + randomNum();
     }
   };
 
@@ -75,7 +95,7 @@ export default function dynamicRainbowGrid(
           greenValue = arrayOfPoints[i][j - 1].g + randomNum();
           blueValue = arrayOfPoints[i][j - 1].b + randomNum();
           if (i > 0) {
-            //Find color of circle to left, average, and add/minus 10
+            //Find color of circle to left, average, and add/minus up to 10
             redValue = (redValue + arrayOfPoints[i - 1][j].r) / 2 + randomNum();
             greenValue =
               (greenValue + arrayOfPoints[i - 1][j].g) / 2 + randomNum();
@@ -83,12 +103,12 @@ export default function dynamicRainbowGrid(
               (blueValue + arrayOfPoints[i - 1][j].b) / 2 + randomNum();
           }
         } else if (i > 0) {
-          //Find color of circle to left
+          //Find color of circle to left and add/minus up to 10
           redValue = arrayOfPoints[i - 1][j].r + randomNum();
           greenValue = arrayOfPoints[i - 1][j].g + randomNum();
           blueValue = arrayOfPoints[i - 1][j].b + randomNum();
         } else {
-          //Create random colors
+          //Create random colors from component props
           redValue = colors.r;
           greenValue = colors.g;
           blueValue = colors.b;
@@ -114,17 +134,20 @@ export default function dynamicRainbowGrid(
     }
   }
 
-  //If array is full and rgb values have been assigned
+  //If array is full and rgb values have been assigned, do an update
   if (arrayOfPoints.length !== 0 && arrayOfPoints[0][0].r) {
     for (let i = 0; i < columns; i++) {
-      for (let j = 0; j < rows; j++) {
+      for (let j = rows - 1; j >= 0; j--) {
         const coords = arrayOfPoints[i][j];
-        //Increment rgb values by color2 value - color1 value / 10
-        coords.r += (coords.r2 - coords.r1)/10;
-        coords.g += (coords.g2 - coords.g1)/10;
-        coords.b += (coords.b2 - coords.b1)/10;
-        //Reset color values after count of 10
-        if (count % 10 === 0) getColor2Values(coords, i, j);
+        //Increment rgb values by color2 value - color1 value / 50
+        coords.r += (coords.r2 - coords.r1) / 50;
+        coords.g += (coords.g2 - coords.g1) / 50;
+        coords.b += (coords.b2 - coords.b1) / 50;
+        //Reset color values after count of 50
+        if (count % 50 === 0) {
+          resetColor1Values(coords);
+          getColor2Values(coords, i, j, 'update');
+        }
         ctx.fillStyle = `rgb(${coords.r}, ${coords.g}, ${coords.b})`;
         ctx.beginPath();
         ctx.arc(coords.x, coords.y, 15, 0, Math.PI * 2);
