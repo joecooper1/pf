@@ -41,9 +41,9 @@ export default function dynamicRainbowGrid(
   const getColor2Values = (coords, i, j, order = 'initial') => {
     //Set color2 values using values of circle to left
     if (i > 0) {
-      coords.r2 = arrayOfPoints[i - 1][j].r;
-      coords.g2 = arrayOfPoints[i - 1][j].g;
-      coords.b2 = arrayOfPoints[i - 1][j].b;
+      coords.r2 = arrayOfPoints[i - 1][j].r1;
+      coords.g2 = arrayOfPoints[i - 1][j].g1;
+      coords.b2 = arrayOfPoints[i - 1][j].b1;
     } else if (i === 0 && j === 0 && order === 'initial') {
       //Or if they are at the far left top corner, set a new value
       coords.r2 = coords.r1 + randomNum();

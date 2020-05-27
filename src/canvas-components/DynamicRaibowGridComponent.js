@@ -41,7 +41,7 @@ export default function DynamicRainbowGridComponent(props) {
     if (count >= 0)
       setTimeout(() => {
         setCount(count + 1);
-      }, 50);
+      }, 5);
   });
 
   //Set height and width of canvas
