@@ -2,7 +2,7 @@
   "name": "my-pf",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://joecooper1.github.io/pf/",
+  "homepage": "http://joecooper1.github.io/pf",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
