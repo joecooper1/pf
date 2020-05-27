@@ -8,29 +8,28 @@ export default function DynamicRainbowGridComponent(props) {
   const canvasRef = useRef(null);
   const [count, setCount] = useState(0);
   const [arrayOfPoints, setArrayOfPoints] = useState([]);
+  const [colors, setColors] = useState({ r: 0, g: 0, b: 0 });
 
-  // useEffect(() => {
-  //   if (count === 0) {
-  //     setTimeout(() => {
-  //       setCount(count + 1);
-  //     }, 5000);
-  //   } else if (count < 100) {
-  //     setTimeout(() => {
-  //       setCount(count + 1);
-  //     }, 100);
-  //   } else {
-  //     setCount(0);
-  //   }
-  // });
+  //Set initial colors
+  useEffect(() => {
+    if (colors.r === 0 && colors.g === 0 && colors.b === 0) {
+      const redValue = Math.floor(Math.random() * 255);
+      const greenValue = Math.floor(Math.random() * 255);
+      const blueValue = Math.floor(Math.random() * 255);
+      setColors({ r: redValue, g: greenValue, b: blueValue });
+    }
+  });
 
+  //Draw on canvas
   useEffect(() => {
     const canvas = canvasRef.current;
     if (canvas) {
       const ctx = canvas.getContext("2d");
-      dynamicRainbowGrid(ctx, width, height, arrayOfPoints, setArrayOfPoints);
+      dynamicRainbowGrid(ctx, width, height, arrayOfPoints, setArrayOfPoints, colors);
     }
   });
 
+  //Set height and width of canvas
   const { height, width } = props;
 
   return (

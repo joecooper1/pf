@@ -3,7 +3,8 @@ export default function dynamicRainbowGrid(
   width,
   height,
   arrayOfPoints,
-  setArrayOfPoints
+  setArrayOfPoints,
+  colors
 ) {
   //Draw a dynamic rainbow grid
 
@@ -12,8 +13,8 @@ export default function dynamicRainbowGrid(
   const rows = Math.floor(height / 30 + 2);
 
   //Create array of arrays representing rows, with objects as {x: 15, y: 15} etc
+  const newArrayOfPoints = [];
   if (arrayOfPoints.length === 0) {
-    const newArrayOfPoints = [];
     for (let i = 0; i < columns; i++) {
       newArrayOfPoints.push([]);
       for (let j = 0; j < rows; j++) {
@@ -60,9 +61,9 @@ export default function dynamicRainbowGrid(
           blueValue = arrayOfPoints[i - 1][j].b + randomNum();
         } else {
           //Create random colors
-          redValue = Math.floor(Math.random() * 255);
-          greenValue = Math.floor(Math.random() * 255);
-          blueValue = Math.floor(Math.random() * 255);
+          redValue = colors.r;
+          greenValue = colors.g;
+          blueValue = colors.b;
         }
 
         //Set colors as values on object
@@ -75,5 +76,11 @@ export default function dynamicRainbowGrid(
         ctx.fill();
       }
     }
+    //Change first point
+    // arrayOfPoints[0][0].r += 1;
+    // arrayOfPoints[0][0].g += 1;
+    // arrayOfPoints[0][0].b += 1;
+
+    // setTimeout(() => setArrayOfPoints([...arrayOfPoints]), 1000)
   }
 }
