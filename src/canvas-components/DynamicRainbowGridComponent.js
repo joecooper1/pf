@@ -6,9 +6,23 @@ import dynamicRainbowGrid from "../canvas-utils/dynamicRainbowGrid";
 
 export default function DynamicRainbowGridComponent(props) {
   const canvasRef = useRef(null);
+
+  //Count - a counter that propels the animations
   const [count, setCount] = useState(0);
+  //Array of points - an array containing all the grid coordinates, and their colors
   const [arrayOfPoints, setArrayOfPoints] = useState([]);
+  //Colors - the initial colors for the top left piece
   const [colors, setColors] = useState({ r: 0, g: 0, b: 0 });
+  //Type - the shape of the pieces
+  const [type, setType] = useState(null);
+
+  //Select type
+  useEffect(() => {
+    if (!type) {
+      const types = ['circle', 'square'];
+      setType(types[Math.floor(Math.random() * types.length)]);
+    }
+  })
 
   //Set initial colors
   useEffect(() => {
@@ -34,7 +48,8 @@ export default function DynamicRainbowGridComponent(props) {
         arrayOfPoints,
         setArrayOfPoints,
         colors,
-        count
+        count,
+        type
       );
     }
     //Set timeout to move to next step, DISABLE THIS TO STOP ANIMATION, or change timer to speed it up/slow it down

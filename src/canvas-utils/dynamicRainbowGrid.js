@@ -5,7 +5,8 @@ export default function dynamicRainbowGrid(
   arrayOfPoints,
   setArrayOfPoints,
   colors,
-  count
+  count,
+  type
 ) {
   //Draw a dynamic rainbow grid
 
@@ -30,6 +31,13 @@ export default function dynamicRainbowGrid(
     ctx.beginPath();
     ctx.arc(coords.x, coords.y, 15, 0, Math.PI * 2);
     ctx.fill();
+  };
+
+  //Draw square
+  const drawSquare = (coords) => {
+    ctx.strokeStyle = "black";
+    ctx.fillRect(coords.x - 15, coords.y - 15, 30, 30);
+    ctx.strokeRect(coords.x - 15, coords.y - 15, 30, 30);
   };
 
   //Make function to get random number between -5 and 5
@@ -161,7 +169,8 @@ export default function dynamicRainbowGrid(
           getColor2Values(coords, i, j, "update");
         }
         ctx.fillStyle = `rgb(${coords.r}, ${coords.g}, ${coords.b})`;
-        drawCircle(coords);
+        if (type === 'circle') drawCircle(coords);
+        if (type === 'square') drawSquare(coords);
       }
     }
   }
