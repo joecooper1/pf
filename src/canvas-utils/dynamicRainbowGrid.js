@@ -114,6 +114,11 @@ export default function dynamicRainbowGrid(
           blueValue = colors.b;
         }
 
+        //Limit color values to be in certain range
+        if (redValue > 240) redValue -= 10;
+        if (greenValue > 240) greenValue -= 10;
+        if (blueValue > 240) blueValue -= 10;
+
         //Set color1 values
         coords.r1 = redValue;
         coords.g1 = greenValue;

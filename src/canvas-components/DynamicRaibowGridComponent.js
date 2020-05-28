@@ -13,8 +13,8 @@ export default function DynamicRainbowGridComponent(props) {
   //Set initial colors
   useEffect(() => {
     if (colors.r === 0 && colors.g === 0 && colors.b === 0) {
-      //Set seed color to ensure pastels only
-      const seedValue = Math.floor(Math.random() * 255);
+      //Set seed color to ensure pastels only, and no whites
+      const seedValue = Math.floor(Math.random() * 150 + 50);
       const redValue = seedValue + Math.floor(Math.random() * 30 - 15);
       const greenValue = seedValue + Math.floor(Math.random() * 30 - 15);
       const blueValue = seedValue + Math.floor(Math.random() * 30 - 15);
@@ -41,7 +41,7 @@ export default function DynamicRainbowGridComponent(props) {
     if (count >= 0)
       setTimeout(() => {
         setCount(count + 1);
-      }, 5);
+      }, 50);
   });
 
   //Set height and width of canvas
