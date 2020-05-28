@@ -20,7 +20,7 @@ export default function DynamicRainbowGridComponent(props) {
       const blueValue = seedValue + Math.floor(Math.random() * 30 - 15);
       setColors({ r: redValue, g: greenValue, b: blueValue });
     }
-  });
+  }, [colors.r, colors.g, colors.b]);
 
   //Draw on canvas
   useEffect(() => {
