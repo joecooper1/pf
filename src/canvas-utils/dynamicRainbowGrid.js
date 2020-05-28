@@ -25,6 +25,13 @@ export default function dynamicRainbowGrid(
     setArrayOfPoints([...newArrayOfPoints]);
   }
 
+  //Draw circle
+  const drawCircle = (coords) => {
+    ctx.beginPath();
+    ctx.arc(coords.x, coords.y, 15, 0, Math.PI * 2);
+    ctx.fill();
+  };
+
   //Make function to get random number between -5 and 5
   const randomNum = () => {
     return Math.floor(Math.random() * 30 - 15);
@@ -38,18 +45,18 @@ export default function dynamicRainbowGrid(
   };
 
   //Get color2 values
-  const getColor2Values = (coords, i, j, order = 'initial') => {
+  const getColor2Values = (coords, i, j, order = "initial") => {
     //Set color2 values using values of circle to left
     if (i > 0) {
       coords.r2 = arrayOfPoints[i - 1][j].r1;
       coords.g2 = arrayOfPoints[i - 1][j].g1;
       coords.b2 = arrayOfPoints[i - 1][j].b1;
-    } else if (i === 0 && j === 0 && order === 'initial') {
+    } else if (i === 0 && j === 0 && order === "initial") {
       //Or if they are at the far left top corner, set a new value
       coords.r2 = coords.r1 + randomNum();
       coords.g2 = coords.g1 + randomNum();
       coords.b2 = coords.b1 + randomNum();
-    } else if (order === 'initial') {
+    } else if (order === "initial") {
       //Or if they are on the left side, but not the top left corner
       coords.r2 =
         (coords.r1 + randomNum() + arrayOfPoints[i][j - 1].r) / 2 + randomNum();
@@ -57,12 +64,12 @@ export default function dynamicRainbowGrid(
         (coords.g1 + randomNum() + arrayOfPoints[i][j - 1].g) / 2 + randomNum();
       coords.b2 =
         (coords.b1 + randomNum() + arrayOfPoints[i][j - 1].b) / 2 + randomNum();
-    } else if (i === 0 && j === rows - 1 && order === 'update') {
+    } else if (i === 0 && j === rows - 1 && order === "update") {
       //If they are at the left bottom corner, while updating
       coords.r2 = coords.r1 + randomNum();
       coords.g2 = coords.g1 + randomNum();
       coords.b2 = coords.b1 + randomNum();
-    } else if (order === 'update') {
+    } else if (order === "update") {
       //They are on the left hand side, but not in the bottom corner
       coords.r2 =
         (coords.r1 + randomNum() + arrayOfPoints[i][j + 1].r) / 2 + randomNum();
@@ -151,12 +158,10 @@ export default function dynamicRainbowGrid(
         //Reset color values after count of 50
         if (count % 50 === 0) {
           resetColor1Values(coords);
-          getColor2Values(coords, i, j, 'update');
+          getColor2Values(coords, i, j, "update");
         }
         ctx.fillStyle = `rgb(${coords.r}, ${coords.g}, ${coords.b})`;
-        ctx.beginPath();
-        ctx.arc(coords.x, coords.y, 15, 0, Math.PI * 2);
-        ctx.fill();
+        drawCircle(coords);
       }
     }
   }
