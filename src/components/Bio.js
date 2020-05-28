@@ -19,6 +19,8 @@ export default function Bio(props) {
             linkedin
           </Link>
         </SmallText>
+        <button dimensions={props} onClick={() => {props.scrollComponent('about')}}>about</button>
+        <button dimensions={props} onClick={() => {props.scrollComponent('projects')}}>projects</button>
       </SmallView>
     </View>
   );

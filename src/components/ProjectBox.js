@@ -13,7 +13,7 @@ import { projectData } from "../data/projectData";
 
 export default function ProjectBox(props) {
   return (
-    <Portfolio>
+    <Portfolio ref={props.projectsRef}>
       <PortfolioTitle dimensions={props}>Portfolio</PortfolioTitle>
       <Box dimensions={props}>
         {projectData.map((data) => {

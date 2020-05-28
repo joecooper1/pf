@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 
 import { Window } from "./styles/App";
 
@@ -9,20 +9,39 @@ import About from "./components/About";
 
 import useWindowDimensions from "./utils/useWindowDimensions";
 
+import scrollToComponent from "react-scroll-to-component";
+
 //Scroll to element function
 const scrollToBio = () => window.scrollTo(0, 0);
 
 function App() {
   const { height, width } = useWindowDimensions();
 
+  const aboutRef = useRef(null);
+  const projectsRef = useRef(null);
+
+  //Scroll to component
+  const scrollComponent = (ref) => {
+    if (ref === "about") {
+      scrollToComponent(aboutRef.current, { align: "top", duration: 1 });
+    } else if (ref === "projects") {
+      scrollToComponent(projectsRef.current, {align: 'top', duration: 1});
+    }
+  };
+
   return (
     <>
-    <Canvas height={height} width={width} />
-    <Window height={height} width={width}>
-      <Bio height={height} width={width} />
-      <About height={height} width={width} />
-      <ProjectBox scrollToBio={scrollToBio} height={height} width={width} />
-    </Window>
+      <Canvas height={height} width={width} />
+      <Window height={height} width={width}>
+        <Bio height={height} width={width} scrollComponent={scrollComponent} />
+        <About height={height} width={width} aboutRef={aboutRef} />
+        <ProjectBox
+          scrollToBio={scrollToBio}
+          height={height}
+          width={width}
+          projectsRef={projectsRef}
+        />
+      </Window>
     </>
   );
 }

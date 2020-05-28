@@ -21,7 +21,7 @@ import {
 
 export default function About(props) {
   return (
-    <View dimensions={props}>
+    <View dimensions={props} ref={props.aboutRef}>
       <Text dimensions={props}>
         I've been using code - terrible, convoluted, wildly inefficient code -
         in my artistic projects for years, to create interactive performances
