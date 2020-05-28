@@ -66,7 +66,6 @@ export const Button = styled.button`
   padding: 0;
   font: inherit;
   cursor: pointer;
-  outline: inherit;
   font-size: 20px;
   text-decoration: underline;
 `;
@@ -78,7 +77,6 @@ export const ButtonTwo = styled.button`
   padding: 0;
   font: inherit;
   cursor: pointer;
-  outline: inherit;
   font-size: 15px;
   text-decoration: underline;
   margin-top: 25px;
