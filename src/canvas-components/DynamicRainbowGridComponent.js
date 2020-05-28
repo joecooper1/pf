@@ -19,10 +19,11 @@ export default function DynamicRainbowGridComponent(props) {
   //Select type
   useEffect(() => {
     if (!type) {
-      const types = ['circle', 'square'];
-      setType(types[Math.floor(Math.random() * types.length)]);
+      const types = ["circle", "square", "abstract"];
+      // setType(types[Math.floor(Math.random() * types.length)]);
+      setType("abstract");
     }
-  })
+  });
 
   //Set initial colors
   useEffect(() => {

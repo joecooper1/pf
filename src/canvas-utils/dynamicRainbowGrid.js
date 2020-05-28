@@ -26,6 +26,16 @@ export default function dynamicRainbowGrid(
     setArrayOfPoints([...newArrayOfPoints]);
   }
 
+  //Make function to get random number between -5 and 5
+  const randomNum = () => {
+    return Math.floor(Math.random() * 30 - 15);
+  };
+
+  //Make function to get small random number
+  const smallRandomNum = () => {
+    return Math.floor(Math.random() * 10);
+  };
+
   //Draw circle
   const drawCircle = (coords) => {
     ctx.beginPath();
@@ -40,9 +50,19 @@ export default function dynamicRainbowGrid(
     ctx.strokeRect(coords.x - 15, coords.y - 15, 30, 30);
   };
 
-  //Make function to get random number between -5 and 5
-  const randomNum = () => {
-    return Math.floor(Math.random() * 30 - 15);
+  //Draw abstract
+  const drawAbstract = (coords) => {
+    ctx.strokeStyle = "black";
+    ctx.lineWidth = 3;
+    ctx.beginPath();
+
+    ctx.moveTo(coords.points[0], coords.points[1]);
+    ctx.lineTo(coords.points[2], coords.points[3]);
+    ctx.lineTo(coords.points[4], coords.points[5]);
+    ctx.lineTo(coords.points[6], coords.points[7]);
+    ctx.lineTo(coords.points[0], coords.points[1]);
+    ctx.stroke();
+    ctx.fill();
   };
 
   //Reset color1 values
@@ -89,6 +109,7 @@ export default function dynamicRainbowGrid(
   };
 
   //If array is not empty and array does not have rgb values yet
+  //Array of values Points is used to determine layout of abtract shapes
   //Values r g b are values used to draw color
   //Values r1 g1 b1 are values used to set the starting point
   //Values r2 g2 b2 are values of the circle behind it, or if there is no behind it, are created
@@ -97,6 +118,39 @@ export default function dynamicRainbowGrid(
     for (let i = 0; i < columns; i++) {
       for (let j = 0; j < rows; j++) {
         const coords = arrayOfPoints[i][j];
+
+        //Create points array of coordinates, depending on if they at edges or not
+        coords.points = [];
+        //Top left corner
+        if (j === 0 && i === 0) {
+          coords.points[0] = coords.x - 30 - smallRandomNum();
+          coords.points[1] = coords.y - 30 - smallRandomNum();
+        } else if (j > 0) {
+          coords.points[0] = arrayOfPoints[i][j - 1].points[6];
+          coords.points[1] = arrayOfPoints[i][j - 1].points[7];
+        } else if (i > 0) {
+          coords.points[0] = arrayOfPoints[i - 1][j].points[2];
+          coords.points[1] = arrayOfPoints[i - 1][j].points[3];
+        }
+        //Top right corner
+        if (j === 0) {
+          coords.points[2] = coords.x + 30 + smallRandomNum();
+          coords.points[3] = coords.y - 30 - smallRandomNum();
+        } else {
+          coords.points[2] = arrayOfPoints[i][j - 1].points[4];
+          coords.points[3] = arrayOfPoints[i][j - 1].points[5];
+        }
+        //Bottom right corner
+        coords.points[4] = coords.x + 30 + smallRandomNum();
+        coords.points[5] = coords.y + 30 + smallRandomNum();
+        //Bottom left corner
+        if (i === 0) {
+          coords.points[6] = coords.x - 30 - smallRandomNum();
+          coords.points[7] = coords.y + 30 + smallRandomNum();
+        } else {
+          coords.points[6] = arrayOfPoints[i-1][j].points[4];
+          coords.points[7] = arrayOfPoints[i-1][j].points[5];
+        }
 
         //Declare color values
         let redValue,
@@ -169,8 +223,9 @@ export default function dynamicRainbowGrid(
           getColor2Values(coords, i, j, "update");
         }
         ctx.fillStyle = `rgb(${coords.r}, ${coords.g}, ${coords.b})`;
-        if (type === 'circle') drawCircle(coords);
-        if (type === 'square') drawSquare(coords);
+        if (type === "circle") drawCircle(coords);
+        if (type === "square") drawSquare(coords);
+        if (type === "abstract") drawAbstract(coords);
       }
     }
   }
