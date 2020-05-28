@@ -32,8 +32,8 @@ export default function dynamicRainbowGrid(
   };
 
   //Make function to get small random number
-  const smallRandomNum = () => {
-    return Math.floor(Math.random() * 10);
+  const smallRandomNum = (n = 10) => {
+    return Math.floor(Math.random() * n);
   };
 
   //Draw circle
@@ -53,7 +53,7 @@ export default function dynamicRainbowGrid(
   //Draw abstract
   const drawAbstract = (coords) => {
     ctx.strokeStyle = "black";
-    ctx.lineWidth = 3;
+    ctx.lineWidth = 5;
     ctx.beginPath();
 
     ctx.moveTo(coords.points[0], coords.points[1]);
@@ -119,37 +119,39 @@ export default function dynamicRainbowGrid(
       for (let j = 0; j < rows; j++) {
         const coords = arrayOfPoints[i][j];
 
-        //Create points array of coordinates, depending on if they at edges or not
-        coords.points = [];
-        //Top left corner
-        if (j === 0 && i === 0) {
-          coords.points[0] = coords.x - 30 - smallRandomNum();
-          coords.points[1] = coords.y - 30 - smallRandomNum();
-        } else if (j > 0) {
-          coords.points[0] = arrayOfPoints[i][j - 1].points[6];
-          coords.points[1] = arrayOfPoints[i][j - 1].points[7];
-        } else if (i > 0) {
-          coords.points[0] = arrayOfPoints[i - 1][j].points[2];
-          coords.points[1] = arrayOfPoints[i - 1][j].points[3];
-        }
-        //Top right corner
-        if (j === 0) {
-          coords.points[2] = coords.x + 30 + smallRandomNum();
-          coords.points[3] = coords.y - 30 - smallRandomNum();
-        } else {
-          coords.points[2] = arrayOfPoints[i][j - 1].points[4];
-          coords.points[3] = arrayOfPoints[i][j - 1].points[5];
-        }
-        //Bottom right corner
-        coords.points[4] = coords.x + 30 + smallRandomNum();
-        coords.points[5] = coords.y + 30 + smallRandomNum();
-        //Bottom left corner
-        if (i === 0) {
-          coords.points[6] = coords.x - 30 - smallRandomNum();
-          coords.points[7] = coords.y + 30 + smallRandomNum();
-        } else {
-          coords.points[6] = arrayOfPoints[i-1][j].points[4];
-          coords.points[7] = arrayOfPoints[i-1][j].points[5];
+        if ((type = "abstract")) {
+          //Create points array of coordinates, depending on if they at edges or not
+          coords.points = [];
+          //Top left corner
+          if (j === 0 && i === 0) {
+            coords.points[0] = coords.x - 15 - smallRandomNum();
+            coords.points[1] = coords.y - 15 - smallRandomNum();
+          } else if (j > 0) {
+            coords.points[0] = arrayOfPoints[i][j - 1].points[6];
+            coords.points[1] = arrayOfPoints[i][j - 1].points[7];
+          } else if (i > 0) {
+            coords.points[0] = arrayOfPoints[i - 1][j].points[2];
+            coords.points[1] = arrayOfPoints[i - 1][j].points[3];
+          }
+          //Top right corner
+          if (j === 0) {
+            coords.points[2] = coords.x + smallRandomNum(40);
+            coords.points[3] = coords.y - 15 - smallRandomNum();
+          } else {
+            coords.points[2] = arrayOfPoints[i][j - 1].points[4];
+            coords.points[3] = arrayOfPoints[i][j - 1].points[5];
+          }
+          //Bottom right corner
+          coords.points[4] = coords.x + 15 + smallRandomNum(30);
+          coords.points[5] = coords.y + 15 + smallRandomNum(30);
+          //Bottom left corner
+          if (i === 0) {
+            coords.points[6] = coords.x - 15 - smallRandomNum();
+            coords.points[7] = coords.y + smallRandomNum(30);
+          } else {
+            coords.points[6] = arrayOfPoints[i - 1][j].points[4];
+            coords.points[7] = arrayOfPoints[i - 1][j].points[5];
+          }
         }
 
         //Declare color values

@@ -54,7 +54,7 @@ export default function DynamicRainbowGridComponent(props) {
       );
     }
     //Set timeout to move to next step, DISABLE THIS TO STOP ANIMATION, or change timer to speed it up/slow it down
-    if (count >= 0)
+    if (count <= 0)
       setTimeout(() => {
         setCount(count + 1);
       }, 50);
