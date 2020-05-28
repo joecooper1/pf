@@ -1,6 +1,16 @@
 import React from "react";
 
-import { Title, Text, View, SmallText, Link, SmallView } from "../styles/Bio";
+import {
+  Title,
+  Text,
+  View,
+  SmallText,
+  Link,
+  SmallView,
+  ButtonsBar,
+  Button,
+  ButtonTwo
+} from "../styles/Bio";
 
 export default function Bio(props) {
   return (
@@ -19,8 +29,25 @@ export default function Bio(props) {
             linkedin
           </Link>
         </SmallText>
-        <button dimensions={props} onClick={() => {props.scrollComponent('about')}}>about</button>
-        <button dimensions={props} onClick={() => {props.scrollComponent('projects')}}>projects</button>
+        <ButtonsBar>
+          <Button
+            dimensions={props}
+            onClick={() => {
+              props.scrollComponent("about");
+            }}
+          >
+            about
+          </Button>
+          <Button
+            dimensions={props}
+            onClick={() => {
+              props.scrollComponent("projects");
+            }}
+          >
+            projects
+          </Button>
+        </ButtonsBar>
+        <ButtonTwo>what is this background?</ButtonTwo>
       </SmallView>
     </View>
   );
