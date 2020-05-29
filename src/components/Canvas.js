@@ -11,7 +11,7 @@ export default function Canvas(props) {
   const width = props.width > 1024 ? props.width * 0.9 : props.width;
   const height = props.width > 1024 ? props.height * 0.9 : props.height;
 
-  if (props.width > 1024) {
+  if (props.width > 1) {
     return <DynamicRainbowGridComponent height={height} width={width} />;
     // return <TestCanvas height={height} width={width}></TestCanvas>;
   } else {
@@ -22,7 +22,7 @@ export default function Canvas(props) {
       <img
         src={pic}
         alt="stained-glass-background"
-        style={{ width: props.width, zIndex: -1, position: 'absolute' }}
+        style={{ width: props.width, zIndex: -1, position: "absolute" }}
       ></img>
     );
   }

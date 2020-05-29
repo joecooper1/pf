@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 
 import { Window } from "./styles/App";
 
@@ -15,7 +15,15 @@ import scrollToComponent from "react-scroll-to-component";
 const scrollToBio = () => window.scrollTo(0, 0);
 
 function App() {
+  const [winHeight, setWinHeight] = useState(null);
+  const [winWidth, setWinWidth] = useState(null);
   const { height, width } = useWindowDimensions();
+  useEffect(() => {
+    if (!winHeight && !winWidth) {
+      setWinHeight(height);
+      setWinWidth(width);
+    }
+  });
 
   const aboutRef = useRef(null);
   const projectsRef = useRef(null);
@@ -29,20 +37,20 @@ function App() {
     }
   };
 
-  //Atm canvas breaks the site on mobile, so only render if on desktop
-  const optionalCanvas =
-    width > 1 ? <Canvas height={height} width={width} /> : null;
-
   return (
     <>
-      {optionalCanvas}
-      <Window height={height} width={width}>
-        <Bio height={height} width={width} scrollComponent={scrollComponent} />
-        <About height={height} width={width} aboutRef={aboutRef} />
+      <Canvas height={winHeight} width={winWidth} />
+      <Window height={winHeight} width={winWidth}>
+        <Bio
+          height={winHeight}
+          width={winWidth}
+          scrollComponent={scrollComponent}
+        />
+        <About height={winHeight} width={winWidth} aboutRef={aboutRef} />
         <ProjectBox
           scrollToBio={scrollToBio}
-          height={height}
-          width={width}
+          height={winHeight}
+          width={winWidth}
           projectsRef={projectsRef}
         />
       </Window>
