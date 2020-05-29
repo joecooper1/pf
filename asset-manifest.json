@@ -1,24 +1,27 @@
 {
   "files": {
     "main.css": "/pf/static/css/main.5ecd60fb.chunk.css",
-    "main.js": "/pf/static/js/main.ed104126.chunk.js",
-    "main.js.map": "/pf/static/js/main.ed104126.chunk.js.map",
+    "main.js": "/pf/static/js/main.f3404c30.chunk.js",
+    "main.js.map": "/pf/static/js/main.f3404c30.chunk.js.map",
     "runtime-main.js": "/pf/static/js/runtime-main.d23640c1.js",
     "runtime-main.js.map": "/pf/static/js/runtime-main.d23640c1.js.map",
     "static/css/2.043b003d.chunk.css": "/pf/static/css/2.043b003d.chunk.css",
-    "static/js/2.67f5be3d.chunk.js": "/pf/static/js/2.67f5be3d.chunk.js",
-    "static/js/2.67f5be3d.chunk.js.map": "/pf/static/js/2.67f5be3d.chunk.js.map",
+    "static/js/2.a2d1d0ff.chunk.js": "/pf/static/js/2.a2d1d0ff.chunk.js",
+    "static/js/2.a2d1d0ff.chunk.js.map": "/pf/static/js/2.a2d1d0ff.chunk.js.map",
     "index.html": "/pf/index.html",
-    "precache-manifest.3cc97b44e8129bcd29832f417b7a99d5.js": "/pf/precache-manifest.3cc97b44e8129bcd29832f417b7a99d5.js",
+    "precache-manifest.c1bb87d6c3562aea97ac7c6ce7dd430a.js": "/pf/precache-manifest.c1bb87d6c3562aea97ac7c6ce7dd430a.js",
     "service-worker.js": "/pf/service-worker.js",
     "static/css/2.043b003d.chunk.css.map": "/pf/static/css/2.043b003d.chunk.css.map",
     "static/css/main.5ecd60fb.chunk.css.map": "/pf/static/css/main.5ecd60fb.chunk.css.map",
-    "static/js/2.67f5be3d.chunk.js.LICENSE.txt": "/pf/static/js/2.67f5be3d.chunk.js.LICENSE.txt",
+    "static/js/2.a2d1d0ff.chunk.js.LICENSE.txt": "/pf/static/js/2.a2d1d0ff.chunk.js.LICENSE.txt",
     "static/media/angles.png": "/pf/static/media/angles.a14e3f31.png",
     "static/media/beat.png": "/pf/static/media/beat.f19fc8e7.png",
     "static/media/box.png": "/pf/static/media/box.772e97a0.png",
     "static/media/car.png": "/pf/static/media/car.0c5efcee.png",
     "static/media/dead.png": "/pf/static/media/dead.e646d086.png",
+    "static/media/fancyBg1.png": "/pf/static/media/fancyBg1.133c2014.png",
+    "static/media/fancyBg2.png": "/pf/static/media/fancyBg2.fd771feb.png",
+    "static/media/fancyBg3.png": "/pf/static/media/fancyBg3.5a93f4ff.png",
     "static/media/ghost.png": "/pf/static/media/ghost.79f6a87e.png",
     "static/media/hand.png": "/pf/static/media/hand.ba779395.png",
     "static/media/meditation.png": "/pf/static/media/meditation.535c3b17.png",
@@ -35,8 +38,8 @@
   "entrypoints": [
     "static/js/runtime-main.d23640c1.js",
     "static/css/2.043b003d.chunk.css",
-    "static/js/2.67f5be3d.chunk.js",
+    "static/js/2.a2d1d0ff.chunk.js",
     "static/css/main.5ecd60fb.chunk.css",
-    "static/js/main.ed104126.chunk.js"
+    "static/js/main.f3404c30.chunk.js"
   ]
 }
