@@ -105,7 +105,7 @@ export const Image = styled.img`
     return props.type === "vertical"
       ? props.width > 1024
         ? "height: 90%; border-radius: 10px; border: 5px solid black;"
-        : `270px`
+        : `height: 270px; border-radius: 10px; border: 5px solid black;`
       : "width: 100%; height: 45%;";
   }};
   object-fit: cover;
