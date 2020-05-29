@@ -9,11 +9,14 @@ export default function dynamicRainbowGrid(
   type
 ) {
   //Draw a dynamic rainbow grid
-  console.log("here", type);
+
+  //Set diameter and radius of elements based on screen size
+  const diameter = width > 1024 * 0.9 ? 30 : 10;
+  const radius = diameter / 2;
 
   //Determine number of rows and columns
-  const columns = Math.floor(width / 30 + 2);
-  const rows = Math.floor(height / 30 + 2);
+  const columns = Math.floor(width / diameter + 2);
+  const rows = Math.floor(height / diameter + 2);
 
   //Create array of arrays representing rows, with objects as {x: 15, y: 15} etc
   const newArrayOfPoints = [];
@@ -21,26 +24,29 @@ export default function dynamicRainbowGrid(
     for (let i = 0; i < columns; i++) {
       newArrayOfPoints.push([]);
       for (let j = 0; j < rows; j++) {
-        newArrayOfPoints[i].push({ x: i * 30 - 15, y: j * 30 - 15 });
+        newArrayOfPoints[i].push({
+          x: i * diameter - radius,
+          y: j * diameter - radius,
+        });
       }
     }
     setArrayOfPoints([...newArrayOfPoints]);
   }
 
-  //Make function to get random number between -5 and 5
+  //Make function to get random number between -15 and 15
   const randomNum = () => {
-    return Math.floor(Math.random() * 30 - 15);
+    return Math.floor(Math.random() * diameter - radius);
   };
 
   //Make function to get small random number
-  const smallRandomNum = (n = 10) => {
+  const smallRandomNum = (n = diameter / 3) => {
     return Math.floor(Math.random() * n);
   };
 
   //Draw circle
   const drawCircle = (coords) => {
     ctx.beginPath();
-    ctx.arc(coords.x, coords.y, 15, 0, Math.PI * 2);
+    ctx.arc(coords.x, coords.y, radius, 0, Math.PI * 2);
     ctx.fill();
   };
 
@@ -48,8 +54,8 @@ export default function dynamicRainbowGrid(
   const drawSquare = (coords) => {
     ctx.strokeStyle = "black";
     ctx.lineWidth = 1;
-    ctx.fillRect(coords.x - 15, coords.y - 15, 30, 30);
-    ctx.strokeRect(coords.x - 15, coords.y - 15, 30, 30);
+    ctx.fillRect(coords.x - radius, coords.y - radius, diameter, diameter);
+    if (width > 1024 * 0.9) ctx.strokeRect(coords.x - radius, coords.y - radius, diameter, diameter);
   };
 
   //Draw abstract
@@ -63,7 +69,7 @@ export default function dynamicRainbowGrid(
     ctx.lineTo(coords.points[4], coords.points[5]);
     ctx.lineTo(coords.points[6], coords.points[7]);
     ctx.lineTo(coords.points[0], coords.points[1]);
-    ctx.stroke();
+    if (width > 1024 * 0.9) ctx.stroke();
     ctx.fill();
   };
 
@@ -121,13 +127,13 @@ export default function dynamicRainbowGrid(
       for (let j = 0; j < rows; j++) {
         const coords = arrayOfPoints[i][j];
 
-        if ((type === "abstract")) {
+        if (type === "abstract") {
           //Create points array of coordinates, depending on if they at edges or not
           coords.points = [];
           //Top left corner
           if (j === 0 && i === 0) {
-            coords.points[0] = coords.x - 15 - smallRandomNum();
-            coords.points[1] = coords.y - 15 - smallRandomNum();
+            coords.points[0] = coords.x - radius - smallRandomNum();
+            coords.points[1] = coords.y - radius - smallRandomNum();
           } else if (j > 0) {
             coords.points[0] = arrayOfPoints[i][j - 1].points[6];
             coords.points[1] = arrayOfPoints[i][j - 1].points[7];
@@ -137,19 +143,19 @@ export default function dynamicRainbowGrid(
           }
           //Top right corner
           if (j === 0) {
-            coords.points[2] = coords.x + smallRandomNum(40);
-            coords.points[3] = coords.y - 15 - smallRandomNum();
+            coords.points[2] = coords.x + smallRandomNum(diameter * 1.4);
+            coords.points[3] = coords.y - radius - smallRandomNum();
           } else {
             coords.points[2] = arrayOfPoints[i][j - 1].points[4];
             coords.points[3] = arrayOfPoints[i][j - 1].points[5];
           }
           //Bottom right corner
-          coords.points[4] = coords.x + 15 + smallRandomNum(30);
-          coords.points[5] = coords.y + 15 + smallRandomNum(30);
+          coords.points[4] = coords.x + radius + smallRandomNum(diameter);
+          coords.points[5] = coords.y + radius + smallRandomNum(diameter);
           //Bottom left corner
           if (i === 0) {
-            coords.points[6] = coords.x - 15 - smallRandomNum();
-            coords.points[7] = coords.y + smallRandomNum(30);
+            coords.points[6] = coords.x - radius - smallRandomNum();
+            coords.points[7] = coords.y + smallRandomNum(diameter);
           } else {
             coords.points[6] = arrayOfPoints[i - 1][j].points[4];
             coords.points[7] = arrayOfPoints[i - 1][j].points[5];
@@ -204,10 +210,6 @@ export default function dynamicRainbowGrid(
         coords.r = redValue;
         coords.g = greenValue;
         coords.b = blueValue;
-        ctx.fillStyle = `rgb(${coords.r}, ${coords.g}, ${coords.b})`;
-        ctx.beginPath();
-        ctx.arc(coords.x, coords.y, 15, 0, Math.PI * 2);
-        ctx.fill();
       }
     }
   }
