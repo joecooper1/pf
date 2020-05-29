@@ -25,13 +25,17 @@ function App() {
     if (ref === "about") {
       scrollToComponent(aboutRef.current, { align: "top", duration: 1 });
     } else if (ref === "projects") {
-      scrollToComponent(projectsRef.current, {align: 'top', duration: 1});
+      scrollToComponent(projectsRef.current, { align: "top", duration: 1 });
     }
   };
 
+  //Atm canvas breaks the site on mobile, so only render if on desktop
+  const optionalCanvas =
+    width > 1 ? <Canvas height={height} width={width} /> : null;
+
   return (
     <>
-      <Canvas height={height} width={width} />
+      {optionalCanvas}
       <Window height={height} width={width}>
         <Bio height={height} width={width} scrollComponent={scrollComponent} />
         <About height={height} width={width} aboutRef={aboutRef} />
