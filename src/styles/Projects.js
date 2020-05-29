@@ -47,7 +47,7 @@ export const ProjectStyle = styled.li`
     return props.type === "vertical"
       ? props.width > 1024
         ? `${props.width * 0.3}px`
-        : ``
+        : `330px`
       : props.width > 1024
       ? `${props.width * 0.4}px`
       : ``;
@@ -103,7 +103,9 @@ export const Link = styled.a`
 export const Image = styled.img`
   ${(props) => {
     return props.type === "vertical"
-      ? "height: 90%; border-radius: 10px; border: 5px solid black;"
+      ? props.width > 1024
+        ? "height: 90%; border-radius: 10px; border: 5px solid black;"
+        : `270px`
       : "width: 100%; height: 45%;";
   }};
   object-fit: cover;
