@@ -55,7 +55,8 @@ export default function dynamicRainbowGrid(
     ctx.strokeStyle = "black";
     ctx.lineWidth = 1;
     ctx.fillRect(coords.x - radius, coords.y - radius, diameter, diameter);
-    if (width > 1024 * 0.9) ctx.strokeRect(coords.x - radius, coords.y - radius, diameter, diameter);
+    if (width > 1024 * 0.9)
+      ctx.strokeRect(coords.x - radius, coords.y - radius, diameter, diameter);
   };
 
   //Draw abstract
