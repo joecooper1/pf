@@ -19,7 +19,11 @@ export default function DynamicRainbowGridComponent(props) {
   //Select type
   useEffect(() => {
     if (!type) {
-      const types = ["circle", "square", "abstract"];
+      //If small screen, don't allow circles (because they look bad)
+      const types =
+        props.width > 1024
+          ? ["circle", "square", "abstract"]
+          : ["square", "abstract"];
       setType(types[Math.floor(Math.random() * types.length)]);
     }
   }, [type]);

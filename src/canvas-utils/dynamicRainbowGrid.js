@@ -11,7 +11,8 @@ export default function dynamicRainbowGrid(
   //Draw a dynamic rainbow grid
 
   //Set diameter and radius of elements based on screen size
-  const diameter = width > 1024 * 0.9 ? 30 : 10;
+  // const diameter = width > 1024 * 0.9 ? 30 : 10;
+  const diameter = 30;
   const radius = diameter / 2;
 
   //Determine number of rows and columns
