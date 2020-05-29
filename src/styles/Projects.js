@@ -47,7 +47,7 @@ export const ProjectStyle = styled.li`
     return props.type === "vertical"
       ? props.width > 1024
         ? `${props.width * 0.3}px`
-        : `330px`
+        : `360px`
       : props.width > 1024
       ? `${props.width * 0.4}px`
       : ``;
