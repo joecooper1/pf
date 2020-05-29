@@ -9,6 +9,7 @@ export default function dynamicRainbowGrid(
   type
 ) {
   //Draw a dynamic rainbow grid
+  console.log("here", type);
 
   //Determine number of rows and columns
   const columns = Math.floor(width / 30 + 2);
@@ -46,6 +47,7 @@ export default function dynamicRainbowGrid(
   //Draw square
   const drawSquare = (coords) => {
     ctx.strokeStyle = "black";
+    ctx.lineWidth = 1;
     ctx.fillRect(coords.x - 15, coords.y - 15, 30, 30);
     ctx.strokeRect(coords.x - 15, coords.y - 15, 30, 30);
   };
@@ -53,7 +55,7 @@ export default function dynamicRainbowGrid(
   //Draw abstract
   const drawAbstract = (coords) => {
     ctx.strokeStyle = "black";
-    ctx.lineWidth = 5;
+    ctx.lineWidth = 1;
     ctx.beginPath();
 
     ctx.moveTo(coords.points[0], coords.points[1]);
@@ -119,7 +121,7 @@ export default function dynamicRainbowGrid(
       for (let j = 0; j < rows; j++) {
         const coords = arrayOfPoints[i][j];
 
-        if ((type = "abstract")) {
+        if ((type === "abstract")) {
           //Create points array of coordinates, depending on if they at edges or not
           coords.points = [];
           //Top left corner
@@ -226,8 +228,10 @@ export default function dynamicRainbowGrid(
         }
         ctx.fillStyle = `rgb(${coords.r}, ${coords.g}, ${coords.b})`;
         if (type === "circle") drawCircle(coords);
-        if (type === "square") drawSquare(coords);
-        if (type === "abstract") drawAbstract(coords);
+        else if (type === "square") drawSquare(coords);
+        else if (type === "abstract") {
+          drawAbstract(coords);
+        }
       }
     }
   }

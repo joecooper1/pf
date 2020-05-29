@@ -22,7 +22,7 @@ export default function DynamicRainbowGridComponent(props) {
       const types = ["circle", "square", "abstract"];
       setType(types[Math.floor(Math.random() * types.length)]);
     }
-  });
+  }, [type]);
 
   //Set initial colors
   useEffect(() => {
