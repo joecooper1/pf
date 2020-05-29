@@ -21,9 +21,7 @@ export default function DynamicRainbowGridComponent(props) {
     if (!type) {
       //If small screen, don't allow circles (because they look bad)
       const types =
-        props.width > 1024
-          ? ["circle", "square", "abstract"]
-          : ["square", "abstract"];
+        props.width > 1024 ? ["circle", "square", "abstract"] : ["abstract"];
       setType(types[Math.floor(Math.random() * types.length)]);
     }
   }, [type]);
@@ -33,9 +31,9 @@ export default function DynamicRainbowGridComponent(props) {
     if (colors.r === 0 && colors.g === 0 && colors.b === 0) {
       //Set seed color to ensure pastels only, and no whites
       const seedValue = Math.floor(Math.random() * 150 + 50);
-      const redValue = seedValue + Math.floor(Math.random() * 30 - 15);
-      const greenValue = seedValue + Math.floor(Math.random() * 30 - 15);
-      const blueValue = seedValue + Math.floor(Math.random() * 30 - 15);
+      const redValue = seedValue + Math.floor(Math.random() * 50 - 25);
+      const greenValue = seedValue + Math.floor(Math.random() * 50 - 25);
+      const blueValue = seedValue + Math.floor(Math.random() * 50 - 25);
       setColors({ r: redValue, g: greenValue, b: blueValue });
     }
   }, [colors.r, colors.g, colors.b]);
