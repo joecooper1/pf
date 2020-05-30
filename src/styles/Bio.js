@@ -35,7 +35,7 @@ export const View = styled.div`
 `;
 
 export const SmallView = styled.div`
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(255, 255, 255, 0.95);
   padding: ${(props) => {
     return props.dimensions.width > 1024 ? "40px" : "20px";
   }};
