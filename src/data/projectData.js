@@ -2,6 +2,7 @@ import onlyReggae from "../images/onlyReggae.jpg";
 import uFluent from "../images/uFluent.jpg";
 import ncNews from "../images/ncnews.png";
 import ncBackend from "../images/ncbackend.png";
+import collection from '../images/image colelction.png'
 
 import box from "../images/box.png";
 import ghost from "../images/ghost.png";
@@ -34,6 +35,14 @@ export const projectData = [
     description:
       "An educational app designed to help children learn new vocabulary in various languages.\nThe in-built camera app uses machine learning to recognise and translate household objects, and vocabulary quizzes help kids to memorise words.\nBuilt as a final project at Northcoders bootcamp with a team of four other people, in React Native and Python.",
     url: [uFluent],
+  },
+  {
+    name: 'Stained-Glass NPM Package',
+    github: 'https://github.com/joecooper1/stained-glass-generator',
+    link: null,
+    description: 'A public NPM package that draws a random stained-glass style pattern onto an HTML canvas. It has 10 different optional user inputs, each of which change the way the pattern is generated. Made using Javascript.',
+    url: [collection],
+    link: 'https://www.npmjs.com/package/@joecooper1/stained-glass-generator'
   },
   {
     name: "NC News (frontend)",
