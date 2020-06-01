@@ -2,9 +2,6 @@ import React from "react";
 
 import DynamicRainbowGridComponent from "../canvas-components/DynamicRainbowGridComponent";
 
-import fancyBg1 from "../images/fancyBg1.png";
-import fancyBg2 from "../images/fancyBg2.png";
-import fancyBg3 from "../images/fancyBg3.png";
 
 export default function Canvas(props) {
   const width = props.width > 1024 ? props.width * 0.9 : props.width;
@@ -14,7 +11,7 @@ export default function Canvas(props) {
     return <DynamicRainbowGridComponent height={height} width={width} />;
   } else {
     //Place a background image
-    const pics = [fancyBg1, fancyBg2, fancyBg3];
+    const pics = [];
     const pic = pics[Math.floor(Math.random() * pics.length)];
     return (
       <img
