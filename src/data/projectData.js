@@ -25,7 +25,7 @@ export const projectData = [
     link: null,
     description:
       "A small music app I made in four days for a tech test.\nIt uses the Napster API to display the top Reggae tracks, charts and playlists, and gives users the ability to search the database for their favourite albums, artists and songs. Built using React Native.",
-    url: onlyReggae,
+    url: [onlyReggae],
   },
   {
     name: "uFluent",
@@ -33,7 +33,7 @@ export const projectData = [
     link: null,
     description:
       "An educational app designed to help children learn new vocabulary in various languages.\nThe in-built camera app uses machine learning to recognise and translate household objects, and vocabulary quizzes help kids to memorise words.\nBuilt as a final project at Northcoders bootcamp with a team of four other people, in React Native and Python.",
-    url: uFluent,
+    url: [uFluent],
   },
   {
     name: "NC News (frontend)",
@@ -41,7 +41,7 @@ export const projectData = [
     link: "https://nc-news-joecooper1.netlify.app/",
     description:
       "The frontend of my Reddit-like news website, built in React, using Axios, Reach Router and styled-components. It displays the most recent articles, the top users, and 'trending' articles based on an algorithm I designed. It features pagination, filtering by topic or author, a favourites system, and a search function.  The background is dynamic and made using CSS.",
-    url: ncNews,
+    url: [ncNews],
   },
   {
     name: "NC News (backend)",
@@ -49,7 +49,7 @@ export const projectData = [
     link: null,
     description:
       "The backend for the NC News app, built using Express, PostgreSQL and Knex. Allows for adding, editing, deleting, upvoting and favouriting articles, adding, editing, deleting and upvoting comments, and searching by various criteria.",
-    url: ncBackend,
+    url: [ncBackend],
   },
   {
     name: "Ghost Machines",
