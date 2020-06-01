@@ -43,15 +43,6 @@ export const ProjectStyle = styled.li`
       ? `${props.width * 0.45}px`
       : `${props.width * 0.95}px`;
   }};
-  height: ${(props) => {
-    return props.type === "vertical"
-      ? props.width > 1024
-        ? `${props.width * 0.3}px`
-        : `360px`
-      : props.width > 1024
-      ? `${props.width * 0.4}px`
-      : ``;
-  }};
   background-color: rgba(255, 255, 255, 0.6);
   box-shadow: 1px 1px 2px 2px grey;
   margin-top: 20px;
@@ -88,7 +79,7 @@ export const Links = styled.nav`
     return props.width > 1024
       ? ""
       : "width: 100%; justify-content: space-between";
-  }}
+  }}// background-color: pink
 `;
 
 export const Link = styled.a`
@@ -106,9 +97,9 @@ export const Image = styled.img`
       ? props.width > 1024
         ? "height: 90%; border-radius: 10px; border: 5px solid black;"
         : `height: 270px; border-radius: 10px; border: 5px solid black;`
-      : "width: 100%; height: 45%;";
+      : "width: 100%; max-height: 270px; background-color: black";
   }};
-  object-fit: cover;
+  object-fit: contain;
 `;
 
 export const Info = styled.div`
@@ -121,13 +112,11 @@ export const Info = styled.div`
       ? "90%"
       : "95%";
   }};
-  height: ${(props) => {
-    return props.type === "vertical" ? "95%" : "";
-  }};
   display: flex;
   flex-direction: column;
   padding-top: 10px;
   padding-bottom: 10px;
+  // background-color: blue
 `;
 
 export const Text = styled.p`
