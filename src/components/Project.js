@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
 import {
   ProjectStyle,
@@ -12,9 +12,18 @@ import {
   LiveLink,
 } from "../styles/Projects";
 
-import { Slideshow } from "./SlideShow";
-
 export default function Project(props) {
+  const [imageNum, setImageNum] = useState(0);
+
+  useEffect(() => {
+    if (props.data.url.length > 1)
+      setTimeout(() => {
+        let nextImage = imageNum + 1;
+        if (nextImage >= props.data.url.length) nextImage = 0;
+        setImageNum(nextImage);
+      }, 3000);
+  });
+
   const { data, dimensions } = props;
   //Set what the github link should say based on screen size
   const githubLink = data.github ? (
@@ -41,13 +50,14 @@ export default function Project(props) {
     data.name === "uFluent" || data.name === "Only Reggae"
       ? "vertical"
       : "horizontal";
-  //Set what the image should be based on whether its a slideshow or a static image
-  const image =
-    data.name === "Ghost Machines" || data.name === "Flim Nite" ? (
-      <Slideshow fadeImages={data.url} name={data.name}/>
-    ) : (
-      <Image src={data.url} alt={`Screenshot of ${data.name}`} type={type} />
-    );
+  //Set what the image should be
+  const image = (
+    <Image
+      src={data.url[imageNum]}
+      alt={`Screenshot of ${data.name}`}
+      type={type}
+    />
+  );
 
   return (
     <ProjectStyle width={dimensions.width} type={type}>
