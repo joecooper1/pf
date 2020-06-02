@@ -4,7 +4,7 @@ import { Window } from "./styles/App";
 
 import Bio from "./components/Bio";
 import ProjectBox from "./components/ProjectBox";
-import Canvas from "./components/Canvas";
+import Canvas from "./components/Canvas2";
 import About from "./components/About";
 
 import useWindowDimensions from "./utils/useWindowDimensions";
@@ -37,25 +37,29 @@ function App() {
     }
   };
 
-  return (
-    <>
-      <Canvas height={winHeight} width={winWidth} />
-      <Window height={winHeight} width={winWidth}>
-        <Bio
-          height={winHeight}
-          width={winWidth}
-          scrollComponent={scrollComponent}
-        />
-        <About height={winHeight} width={winWidth} aboutRef={aboutRef} />
-        <ProjectBox
-          scrollToBio={scrollToBio}
-          height={winHeight}
-          width={winWidth}
-          projectsRef={projectsRef}
-        />
-      </Window>
-    </>
-  );
+  if (winHeight && winWidth) {
+    return (
+      <>
+        <Canvas height={winHeight} width={winWidth} />
+        <Window height={winHeight} width={winWidth}>
+          <Bio
+            height={winHeight}
+            width={winWidth}
+            scrollComponent={scrollComponent}
+          />
+          <About height={winHeight} width={winWidth} aboutRef={aboutRef} />
+          <ProjectBox
+            scrollToBio={scrollToBio}
+            height={winHeight}
+            width={winWidth}
+            projectsRef={projectsRef}
+          />
+        </Window>
+      </>
+    );
+  } else {
+    return <h1>loading</h1>
+  }
 }
 
 export default App;
