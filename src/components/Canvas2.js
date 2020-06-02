@@ -4,6 +4,7 @@ import drawStainedGlass from "@joecooper1/stained-glass-generator";
 
 export default function Canvas(props) {
   const canvasRef = useRef(null);
+  console.log(props);
 
   const [height, setHeight] = useState(props.height);
   const [width, setWidth] = useState(props.width);
@@ -16,14 +17,18 @@ export default function Canvas(props) {
     //Set possible inputs, to be selected at random
     const inputs = [
       { pieceSize: 10, lineWidth: 0 },
-      { pieceSize: 8, lineWidth: 1, lineColor: 'white' },
+      { pieceSize: 8, lineWidth: 1, lineColor: "white" },
       { shape: "rectangle" },
       { shape: "circle" },
       { shape: "circle", pieceSize: 40 },
       { colorScheme: "hsl", scatter: 5 },
       { shape: "rings" },
     ];
-    const input = inputs[Math.floor(Math.random() * inputs.length)];
+
+    let input = inputs[Math.floor(Math.random() * inputs.length)];
+    if (props.useCustomOptions) {
+       input = props.backgroundOptions;
+    }
 
     ctx.clearRect(0, 0, width, height);
     drawStainedGlass(ctx, height * 1.3, width * 1.3, input);
