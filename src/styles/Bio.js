@@ -7,7 +7,6 @@ export const Title = styled.h1`
     return props.dimensions.width > 1024 ? "2.5em" : "1.5em";
   }};
   text-align: center;
-  // color: palevioletred;
   margin: 0;
 `;
 
@@ -16,7 +15,6 @@ export const Text = styled.p`
     return props.dimensions.width > 1024 ? "1em" : "0.7em";
   }};
   text-align: center;
-  // color: palevioletred;
   margin-top: 0;
 `;
 
@@ -25,16 +23,12 @@ export const SmallText = styled.p`
     return props.dimensions.width > 1024 ? "0.7em" : "0.5em";
   }};
   text-align: center;
-  // color: palevioletred;
   margin: 0;
 `;
 
 export const TinyText = styled.p`
-  font-size: ${(props) => {
-    return props.dimensions.width > 1024 ? "0.5em" : "0.3em";
-  }};
+  font-size: o.5em;
   text-align: center;
-  // color: palevioletred;
   margin: 0;
 `;
 
