@@ -2,22 +2,22 @@ import onlyReggae from "../images/onlyReggae.jpg";
 import uFluent from "../images/uFluent.jpg";
 import ncNews from "../images/ncnews.png";
 import ncBackend from "../images/ncbackend.png";
-import collection from '../images/image colelction.png'
+import collection from "../images/image colelction.png";
 
 import box from "../images/box.png";
 import ghost from "../images/ghost.png";
 import meditation from "../images/meditation.png";
 import menu from "../images/menu.png";
 
-import angles from '../images/angles.png';
-import beat from '../images/beat.png';
-import car from '../images/car.png';
-import space from '../images/space.png';
-import rain from '../images/rain.png';
-import nightmare from '../images/nightmare.png';
-import dead from '../images/dead.png';
-import hand from '../images/hand.png';
-import smiles from '../images/smiles.png';
+import angles from "../images/angles.png";
+import beat from "../images/beat.png";
+import car from "../images/car.png";
+import space from "../images/space.png";
+import rain from "../images/rain.png";
+import nightmare from "../images/nightmare.png";
+import dead from "../images/dead.png";
+import hand from "../images/hand.png";
+import smiles from "../images/smiles.png";
 
 export const projectData = [
   {
@@ -37,12 +37,13 @@ export const projectData = [
     url: [uFluent],
   },
   {
-    name: 'Stained-Glass NPM Package',
-    github: 'https://github.com/joecooper1/stained-glass-generator',
+    name: "Stained-Glass NPM Package",
+    github: "https://github.com/joecooper1/stained-glass-generator",
     link: null,
-    description: 'A public NPM package that draws a random stained-glass style pattern onto an HTML canvas. It has 10 different optional user inputs, each of which change the way the pattern is generated. Made using Javascript.',
+    description:
+      "A public NPM package that draws a random stained-glass style pattern onto an HTML canvas. It has 10 different optional user inputs, each of which change the way the pattern is generated. Made using Javascript.",
     url: [collection],
-    link: 'https://www.npmjs.com/package/@joecooper1/stained-glass-generator'
+    link: "https://www.npmjs.com/package/@joecooper1/stained-glass-generator",
   },
   {
     name: "NC News (frontend)",
