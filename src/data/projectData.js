@@ -27,6 +27,8 @@ export const projectData = [
     description:
       "A small music app I made in four days for a tech test.\nIt uses the Napster API to display the top Reggae tracks, charts and playlists, and gives users the ability to search the database for their favourite albums, artists and songs. Built using React Native.",
     url: [onlyReggae],
+    color1: "rgb(241, 141, 19)",
+    color2: "black",
   },
   {
     name: "uFluent",
@@ -35,6 +37,8 @@ export const projectData = [
     description:
       "An educational app designed to help children learn new vocabulary in various languages.\nThe in-built camera app uses machine learning to recognise and translate household objects, and vocabulary quizzes help kids to memorise words.\nBuilt as a final project at Northcoders bootcamp with a team of four other people, in React Native and Python.",
     url: [uFluent],
+    color1: "rgb(57, 162, 157)",
+    color2: "black",
   },
   {
     name: "Stained-Glass NPM Package",
@@ -44,6 +48,8 @@ export const projectData = [
       "A public NPM package that draws a random stained-glass style pattern onto an HTML canvas. It has 10 different optional user inputs, each of which change the way the pattern is generated. Made using Javascript.",
     url: [collection],
     link: "https://www.npmjs.com/package/@joecooper1/stained-glass-generator",
+    color1: "white",
+    color2: "black",
   },
   {
     name: "NC News (frontend)",
@@ -52,6 +58,8 @@ export const projectData = [
     description:
       "The frontend of my Reddit-like news website, built in React, using Axios, Reach Router and styled-components. It displays the most recent articles, the top users, and 'trending' articles based on an algorithm I designed. It features pagination, filtering by topic or author, a favourites system, and a search function.  The background is dynamic and made using CSS.",
     url: [ncNews],
+    color1: "rgb(122, 83, 151)",
+    color2: "black",
   },
   {
     name: "NC News (backend)",
@@ -60,6 +68,8 @@ export const projectData = [
     description:
       "The backend for the NC News app, built using Express, PostgreSQL and Knex. Allows for adding, editing, deleting, upvoting and favouriting articles, adding, editing, deleting and upvoting comments, and searching by various criteria.",
     url: [ncBackend],
+    color1: "darkgrey",
+    color2: "white",
   },
   {
     name: "Ghost Machines",
@@ -68,6 +78,8 @@ export const projectData = [
     description:
       "A small downloadable game made for literary night First Draft at The Portico Library. It allows users to interact with various simulated ghost-hunting and spirit communication technologies from history. Built using GMS language, which is an app-specific language, and a cross between Javascript and C.",
     url: [box, ghost, meditation, menu],
+    color1: 'rgb(37, 42, 111)',
+    color2: 'white'
   },
   {
     name: "Flim Nite",
@@ -76,5 +88,7 @@ export const projectData = [
     description:
       "I wrote, designed, created assets for and built a series of small video games to be integrated into my own live performances, for the cabaret night Flim Nite. All built using GMS language.",
     url: [dead, hand, smiles, space, rain, nightmare, angles, beat, car],
+    color1: 'rgb(190, 186, 75)',
+    color2: 'black'
   },
 ];
