@@ -20,7 +20,6 @@ export default function Canvas(props) {
       { pieceSize: 8, lineWidth: 1, lineColor: "white" },
       { shape: "rectangle" },
       { shape: "circle" },
-      { shape: "circle", pieceSize: 40 },
       { colorScheme: "hsl", scatter: 5 },
       { shape: "rings" },
     ];
