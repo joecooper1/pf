@@ -27,7 +27,7 @@ export const SmallText = styled.p`
 `;
 
 export const TinyText = styled.p`
-  font-size: o.5em;
+  font-size: 0.5em;
   text-align: center;
   margin: 0;
 `;
