@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import {CSSTransition} from 'react-transition-group';
+import cx from 'classnames';
 
 import {
   Text,
@@ -76,7 +78,7 @@ export default function Bio(props) {
           <Link href="https://www.npmjs.com/package/@joecooper1/stained-glass-generator">
             here
           </Link>
-          on npm<br></br>or{" "}
+          {" "}on npm<br></br>or{" "}
           <Link href="https://github.com/joecooper1/stained-glass-generator">
             here
           </Link>{" "}
