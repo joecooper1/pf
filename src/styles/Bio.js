@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import React from "react";
+import { FaBorderNone } from "react-icons/fa";
 
 export const Title = styled.h1`
   font-size: ${(props) => {
@@ -27,11 +29,27 @@ export const SmallText = styled.p`
   margin: 0;
 `;
 
+export const TinyText = styled.p`
+  font-size: ${(props) => {
+    return props.dimensions.width > 1024 ? "0.5em" : "0.3em";
+  }};
+  text-align: center;
+  // color: palevioletred;
+  margin: 0;
+`;
+
 export const View = styled.div`
   display: flex;
   flex-direction: column;
   height: ${(props) => `${props.dimensions.height}px`};
+  width: ${(props) => {
+    return props.dimensions.width > 1024
+      ? `${props.dimensions.width * 0.5}px`
+      : `${props.dimensions.width}px`;
+  }};
   justify-content: center;
+  // background-color: pink;
+  align-items: center;
 `;
 
 export const SmallView = styled.div`
@@ -39,6 +57,7 @@ export const SmallView = styled.div`
   padding: ${(props) => {
     return props.dimensions.width > 1024 ? "40px" : "20px";
   }};
+  width: 100%;
   padding-bottom: 10px;
   border-radius: 20px;
   margin: 0;
@@ -81,3 +100,23 @@ export const ButtonTwo = styled.button`
   text-decoration: underline;
   margin-top: 25px;
 `;
+
+export const OptionsBar = styled.div`
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: pink;
+`;
+
+export const SelectBar = (props) => {
+  return (
+    <select style={{ backgrondColor: "transparent" }}>
+      {props.options.map((option) => {
+        return <option>{option}</option>;
+      })}
+    </select>
+  );
+};
