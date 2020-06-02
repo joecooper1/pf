@@ -17,6 +17,10 @@ const scrollToBio = () => window.scrollTo(0, 0);
 function App() {
   const [winHeight, setWinHeight] = useState(null);
   const [winWidth, setWinWidth] = useState(null);
+  //For the background, send to canvas
+  const [backgroundOptions, setBackgroundOptions] = useState({});
+  const [useCustomOptions, setUseCustomOptions] = useState(false);
+
   const { height, width } = useWindowDimensions();
   useEffect(() => {
     if (!winHeight && !winWidth) {
@@ -40,12 +44,19 @@ function App() {
   if (winHeight && winWidth) {
     return (
       <>
-        <Canvas height={winHeight} width={winWidth} />
+        <Canvas
+          height={winHeight}
+          width={winWidth}
+          backgroundOptions={backgroundOptions}
+          useCustomOptions={useCustomOptions}
+        />
         <Window height={winHeight} width={winWidth}>
           <Bio
             height={winHeight}
             width={winWidth}
             scrollComponent={scrollComponent}
+            setBackgroundOptions={setBackgroundOptions}
+            setUseCustomOptions={setUseCustomOptions}
           />
           <About height={winHeight} width={winWidth} aboutRef={aboutRef} />
           <ProjectBox
@@ -58,7 +69,7 @@ function App() {
       </>
     );
   } else {
-    return <h1>loading</h1>
+    return <h1>loading</h1>;
   }
 }
 
