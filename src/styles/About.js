@@ -5,7 +5,7 @@ export const View = styled.div`
   padding: ${(props) => {
     return props.dimensions.width > 1024 ? "10px" : "0px";
   }};
-  background-color: black;
+  background-color: rgb(20, 20, 20);
   display: flex;
   flex-direction: ${(props) => {
     return props.dimensions.width > 1024 ? "row" : "column";
