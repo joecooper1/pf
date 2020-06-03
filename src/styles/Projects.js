@@ -5,47 +5,49 @@ import React from "react";
 import { FaGithub } from "react-icons/fa";
 
 export const Portfolio = styled.div`
-  background-color: darkgrey;
+  background-color: rgb(20, 20, 20);;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 40px;
+  // padding-top: 40px;
+  // border-top: 20px solid white;
+  font-family: 'Montserrat', sans-serif;
 `;
 
 export const Box = styled.ul`
   width: ${(props) => {
     return props.dimensions.width > 1024
-      ? `${props.dimensions.width * 0.95}px`
+      ? `100%`
       : `${props.dimensions.width}px`;
   }};
   min-height: 150px;
   margin-bottom: 40px;
   margin-left: 0px;
   padding-left: 0px;
-  padding-bottom: 10px;
+  padding-bottom: 0px;
   display: flex;
   flex-direction: ${(props) => {
     return props.dimensions.width > 1024 ? "row" : "column";
   }};
   justify-content: ${(props) => {
-    return props.dimensions.width > 1024 ? "space-evenly" : "flex-start";
+    return props.dimensions.width > 1024 ? "flex-start" : "flex-start";
   }};
   flex-wrap: wrap;
   align-items: stretch;
-  align-content: space-around;
+  // align-content: space-around;
+  // background-color: pink;
 `;
 
 export const ProjectStyle = styled.li`
   width: ${(props) => {
     return props.width > 1024
-      ? `${props.width * 0.45}px`
-      : `${props.width * 0.95}px`;
+      ? `50%`
+      : `${props.width * 1}px`;
   }};
-  background-color: rgba(255, 255, 255, 0.6);
-  box-shadow: 1px 1px 2px 2px grey;
-  margin-top: 20px;
+  background-color: ${(props) => props.color1};
+  margin-top: 0px;
   display: flex;
   flex-direction: ${(props) => {
     return props.type === "vertical" ? "row" : "column";
@@ -54,6 +56,9 @@ export const ProjectStyle = styled.li`
     return props.type === "vertical" ? "space-evenly" : "flex-start";
   }};
   align-items: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  align-content: flex-start;
 `;
 
 export const PortfolioTitle = styled.h2`
@@ -67,7 +72,7 @@ export const PortfolioTitle = styled.h2`
 
 export const Title = styled.h3`
   font-size: 1em;
-  color: black;
+  color: inherit;
   margin: 0;
 `;
 
@@ -84,7 +89,7 @@ export const Links = styled.nav`
 
 export const Link = styled.a`
   font-size: 0.4em;
-  color: black;
+  color: inherit;
   text-decoration: ${(props) => {
     return props.width > 1024 ? "none" : "underline";
   }};
@@ -97,7 +102,7 @@ export const Image = styled.img`
       ? props.width > 1024
         ? "height: 90%; border-radius: 10px; border: 5px solid black;"
         : `height: 270px; border-radius: 10px; border: 5px solid black;`
-      : "width: 100%; max-height: 270px; background-color: black";
+      : "width: 90%; max-height: 270px; background-color: black";
   }};
   object-fit: contain;
 `;
@@ -117,6 +122,7 @@ export const Info = styled.div`
   padding-top: 10px;
   padding-bottom: 10px;
   // background-color: blue
+  color: ${props => props.color2}
 `;
 
 export const Text = styled.p`
@@ -148,12 +154,12 @@ export const Footer = styled.footer`
   margin-top: -20px;
 `;
 
-export function GithubLink() {
+export function GithubLink(color) {
   return (
     <FaGithub
       size={50}
       style={{
-        backgroundColor: "rgba(0, 0, 0, 0.3)",
+        backgroundColor: "rgba(255, 255, 255, 0.3)",
         width: 30,
         height: 30,
         paddingLeft: 10,
@@ -162,16 +168,17 @@ export function GithubLink() {
         paddingBottom: 10,
         border: "2px solid black",
         borderRadius: "50%",
+        color: 'black'
       }}
     />
   );
 }
 
-export function LiveLink() {
+export function LiveLink(color) {
   return (
     <p
       style={{
-        backgroundColor: "rgba(0, 0, 0, 0.3)",
+        backgroundColor: "rgba(255, 255, 255, 0.3)",
         width: 70,
         height: 30,
         paddingLeft: 10,
@@ -182,6 +189,7 @@ export function LiveLink() {
         borderRadius: "10px",
         margin: 0,
         marginRight: 20,
+        color: 'black'
       }}
     >
       View Live
