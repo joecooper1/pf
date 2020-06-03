@@ -44,6 +44,7 @@ export const View = styled.div`
   justify-content: center;
   // background-color: pink;
   align-items: center;
+  z-index: 1;
 `;
 
 export const SmallView = styled.div`
