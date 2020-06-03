@@ -28,7 +28,7 @@ export default function Project(props) {
   //Set what the github link should say based on screen size
   const githubLink = data.github ? (
     dimensions.width > 1024 ? (
-      <GithubLink />
+      <GithubLink color={data.color1} />
     ) : (
       "View code"
     )
@@ -38,7 +38,7 @@ export default function Project(props) {
   //Set what the live site link should look like based on whether there is one
   const liveLink = data.link ? (
     dimensions.width > 1024 ? (
-      <LiveLink />
+      <LiveLink color={data.color1} />
     ) : (
       "Live site"
     )
@@ -60,9 +60,9 @@ export default function Project(props) {
   );
 
   return (
-    <ProjectStyle width={dimensions.width} type={type}>
+    <ProjectStyle width={dimensions.width} type={type} color1={data.color1}>
       {image}
-      <Info width={dimensions.width} type={type}>
+      <Info width={dimensions.width} type={type} color2={data.color2}>
         <Title width={dimensions.width}>{data.name}</Title>
         <Text width={dimensions.width}>{data.description}</Text>
         <Links width={dimensions.width}>
