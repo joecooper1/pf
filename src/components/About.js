@@ -19,6 +19,8 @@ import {
   FaJava,
 } from "react-icons/fa";
 
+import { DiAndroid } from "react-icons/di";
+
 export default function About(props) {
   return (
     <View dimensions={props} ref={props.aboutRef}>
@@ -64,6 +66,10 @@ export default function About(props) {
             <Logo dimensions={props}>
               <FaJava size={60} />
               <LogoText>Java</LogoText>
+            </Logo>
+            <Logo dimensions={props}>
+              <LogoText>C#</LogoText>
+              <LogoText>.NET</LogoText>
             </Logo>
             <Logo dimensions={props}>
               <LogoText>PostgreSQL</LogoText>
