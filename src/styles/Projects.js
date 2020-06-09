@@ -5,7 +5,7 @@ import React from "react";
 import { FaGithub } from "react-icons/fa";
 
 export const Portfolio = styled.div`
-  background-color: rgb(20, 20, 20);;
+  background-color: rgb(20, 20, 20);
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -13,7 +13,7 @@ export const Portfolio = styled.div`
   align-items: center;
   // padding-top: 40px;
   // border-top: 20px solid white;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 `;
 
 export const Box = styled.ul`
@@ -41,12 +41,30 @@ export const Box = styled.ul`
 `;
 
 export const ProjectStyle = styled.li`
-  width: ${(props) => {
-    return props.width > 1024
-      ? `50%`
-      : `${props.width * 1}px`;
+  box-sizing: border-box;
+  border: ${(props) => {
+    return props.width > 1024 ? `5px solid black` : ``;
   }};
-  background-color: ${(props) => props.color1};
+  width: ${(props) => {
+    return props.width > 1024 ? `50%` : `${props.width * 1}px`;
+  }};
+  background-color: ${(props) => {
+    return props.width > 1024
+      ? `hsl(0, 0%, ${Math.random() * 30 + 50}%)`
+      : props.color1;
+  }};
+  // background-color: ${(props) => props.color1};
+  color: ${(props) => {
+    return props.width > 1024 ? `black` : `${(props) => props.color2}`;
+  }};
+  filter: ${(props) => {
+    return props.width > 1024 ? `grayscale(100%)` : `grayscale(0%)`;
+  }};
+  &:hover {
+    background-color: ${(props) => props.color1};
+    color: ${(props) => props.color2};
+    filter: grayscale(0%);
+  }
   margin-top: 0px;
   display: flex;
   flex-direction: ${(props) => {
@@ -105,6 +123,9 @@ export const Image = styled.img`
       : "width: 90%; max-height: 270px; background-color: black";
   }};
   object-fit: contain;
+  filter: ${(props) => {
+    return props.width > 1024 ? "inherit" : "grayscale(0%)";
+  }};
 `;
 
 export const Info = styled.div`
@@ -122,7 +143,9 @@ export const Info = styled.div`
   padding-top: 10px;
   padding-bottom: 10px;
   // background-color: blue
-  color: ${props => props.color2}
+  color: ${(props) => {
+    return props.width > 1024 ? "inherit" : props.color2;
+  }};
 `;
 
 export const Text = styled.p`
@@ -168,7 +191,7 @@ export function GithubLink(color) {
         paddingBottom: 10,
         border: "2px solid black",
         borderRadius: "50%",
-        color: 'black'
+        color: "black",
       }}
     />
   );
@@ -189,7 +212,7 @@ export function LiveLink(color) {
         borderRadius: "10px",
         margin: 0,
         marginRight: 20,
-        color: 'black'
+        color: "black",
       }}
     >
       View Live

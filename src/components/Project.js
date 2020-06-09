@@ -60,7 +60,7 @@ export default function Project(props) {
   );
 
   return (
-    <ProjectStyle width={dimensions.width} type={type} color1={data.color1}>
+    <ProjectStyle width={dimensions.width} type={type} color1={data.color1} color2={data.color2}>
       {image}
       <Info width={dimensions.width} type={type} color2={data.color2}>
         <Title width={dimensions.width}>{data.name}</Title>
