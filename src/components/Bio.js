@@ -74,6 +74,10 @@ export default function Bio(props) {
         </TinyText>
         <br></br>
         <TinyText dimensions={props}>
+          It produces a random stained-glass pattern,<br></br>drawn onto an HTML canvas,<br></br>each time the page is refreshed.
+        </TinyText>
+        <br></br>
+        <TinyText dimensions={props}>
           View it{" "}
           <Link href="https://www.npmjs.com/package/@joecooper1/stained-glass-generator">
             here
