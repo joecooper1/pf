@@ -27,8 +27,9 @@ export const projectData = [
     description:
       "A small music app I made in four days for a tech test.\nIt uses the Napster API to display the top Reggae tracks, charts and playlists, and gives users the ability to search the database for their favourite albums, artists and songs. Built using React Native.",
     url: [onlyReggae],
-    color1: "#FA9233",
-    color2: "black",
+    color2: "#FA9233",
+    color1: "black",
+    githubColor: "#FA9233",
   },
   {
     name: "uFluent",
@@ -39,6 +40,7 @@ export const projectData = [
     url: [uFluent],
     color1: "#57B7DD",
     color2: "black",
+    githubColor: "rgba(255, 255, 0, 0.9)",
   },
   {
     name: "Stained-Glass NPM Package",
@@ -50,6 +52,8 @@ export const projectData = [
     link: "https://www.npmjs.com/package/@joecooper1/stained-glass-generator",
     color1: "#FFBE0A",
     color2: "black",
+    gradient: "linear-gradient(to right, pink, yellow)",
+    githubColor: "pink",
   },
   {
     name: "NC News (frontend)",
@@ -60,16 +64,21 @@ export const projectData = [
     url: [ncNews],
     color1: "#A98CBC",
     color2: "black",
+    githubColor: "white",
   },
   {
-    name: "NC News (backend)",
+    name: "NC News ",
+    name2: "(backend)",
     github: "https://github.com/joecooper1/nc-news-sprint",
     link: null,
     description:
       "The backend for the NC News app, built using Express, PostgreSQL and Knex. Allows for adding, editing, deleting, upvoting and favouriting articles, adding, editing, deleting and upvoting comments, and searching by various criteria.",
     url: [ncBackend],
     color1: "rgb(23, 23, 23)",
-    color2: "white",
+    color2: "green",
+    color3: "purple",
+    color4: "blue",
+    githubColor: "yellow",
   },
   {
     name: "Ghost Machines",

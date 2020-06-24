@@ -53,7 +53,6 @@ export const ProjectStyle = styled.li`
       ? `hsl(0, 0%, ${Math.random() * 30 + 50}%)`
       : props.color1;
   }};
-  // background-color: ${(props) => props.color1};
   color: ${(props) => {
     return props.width > 1024 ? `black` : `${(props) => props.color2}`;
   }};
@@ -62,6 +61,9 @@ export const ProjectStyle = styled.li`
   }};
   &:hover {
     background-color: ${(props) => props.color1};
+    background-image: ${(props) => {
+      return props.gradient ? props.gradient : null;
+    }};
     color: ${(props) => props.color2};
     filter: grayscale(0%);
   }
@@ -90,8 +92,11 @@ export const PortfolioTitle = styled.h2`
 
 export const Title = styled.h3`
   font-size: 1em;
-  color: inherit;
+  color: ${(props) => {
+    return props.color ? props.color : "inherit";
+  }};
   margin: 0;
+  display: inline;
 `;
 
 export const Links = styled.nav`
@@ -177,12 +182,12 @@ export const Footer = styled.footer`
   margin-top: -20px;
 `;
 
-export function GithubLink(color) {
+export function GithubLink({ color }) {
   return (
     <FaGithub
       size={50}
       style={{
-        backgroundColor: "rgba(255, 255, 255, 0.3)",
+        backgroundColor: color,
         width: 30,
         height: 30,
         paddingLeft: 10,
@@ -197,11 +202,11 @@ export function GithubLink(color) {
   );
 }
 
-export function LiveLink(color) {
+export function LiveLink({ color }) {
   return (
     <p
       style={{
-        backgroundColor: "rgba(255, 255, 255, 0.3)",
+        backgroundColor: color,
         width: 70,
         height: 30,
         paddingLeft: 10,
