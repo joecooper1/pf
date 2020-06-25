@@ -2,12 +2,28 @@ import onlyReggae from "../images/onlyReggae.jpg";
 import uFluent from "../images/uFluent.jpg";
 import ncNews from "../images/ncnews.png";
 import ncBackend from "../images/ncbackend.png";
-import collection from "../images/image colelction.png";
+
+import glass2 from "../images/glass2.png";
+import glass3 from "../images/glass3.png";
+import glass4 from "../images/glass4.png";
+import glass5 from "../images/glass5.png";
+import glass6 from "../images/glass6.png";
+import glass7 from "../images/glass7.png";
+import glass8 from "../images/glass8.png";
+import glass9 from "../images/glass9.png";
 
 import box from "../images/box.png";
 import ghost from "../images/ghost.png";
 import meditation from "../images/meditation.png";
 import menu from "../images/menu.png";
+
+import weather1 from "../images/weather1.png";
+import weather2 from "../images/weather2.png";
+import weather3 from "../images/weather3.png";
+import weather4 from "../images/weather4.png";
+import weather5 from "../images/weather5.png";
+import weather6 from "../images/weather6.png";
+import weather7 from "../images/weather7.png";
 
 import angles from "../images/angles.png";
 import beat from "../images/beat.png";
@@ -30,6 +46,7 @@ export const projectData = [
     color2: "#FA9233",
     color1: "black",
     githubColor: "#FA9233",
+    type: "vertical",
   },
   {
     name: "uFluent",
@@ -41,6 +58,18 @@ export const projectData = [
     color1: "#57B7DD",
     color2: "black",
     githubColor: "rgba(255, 255, 0, 0.9)",
+    type: "vertical",
+  },
+  {
+    name: "Scorchio",
+    github: "https://github.com/joecooper1/scorchio",
+    link: null,
+    description:
+      "A desktop prototype of a live weather-based mobile wallpaper, using the OpenWeather API. In the prototype the user can select a location, and change the time of day and the weather conditions, to simulate the apps behaviour. Built using React, JavaScript and HTML Canvas.",
+    url: [weather1, weather2, weather3, weather4, weather5, weather6, weather7],
+    color1: "#135eaa",
+    color2: "white",
+    type: "vertical",
   },
   {
     name: "Stained-Glass NPM Package",
@@ -48,12 +77,13 @@ export const projectData = [
     link: null,
     description:
       "A public NPM package that draws a random stained-glass style pattern onto an HTML canvas. It has 10 different optional user inputs, each of which change the way the pattern is generated. Made using Javascript.",
-    url: [collection],
+    url: [glass2, glass3, glass4, glass5, glass6, glass7, glass8, glass9],
     link: "https://www.npmjs.com/package/@joecooper1/stained-glass-generator",
     color1: "#FFBE0A",
     color2: "black",
     gradient: "linear-gradient(to right, pink, yellow)",
     githubColor: "pink",
+    type: "vertical",
   },
   {
     name: "NC News (frontend)",
