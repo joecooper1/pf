@@ -46,10 +46,7 @@ export default function Project(props) {
     ""
   );
   //If picture is vertical, set type to vertical, else horizontal
-  const type =
-    data.name === "uFluent" || data.name === "Only Reggae"
-      ? "vertical"
-      : "horizontal";
+  const type = data.type || "horizontal";
   //Set what the image should be
   const image = (
     <Image
